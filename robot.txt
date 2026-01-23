@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block akses ke API/Backend (Standar Vercel)
+Disallow: /api/
+Disallow: /_next/private/
+
+# OPSIONAL: Privasi CV/Resume
+# Jika CV Anda mengandung alamat rumah/no HP pribadi, pertimbangkan untuk membuka baris di bawah ini:
+# Disallow: /assets/cv.pdf
+# Disallow: /downloads/resume.pdf
+
+# Pastikan folder gambar proyek terbuka!
+# Allow: /images/
+# Allow: /projects/
+# Allow: /assets/
+
+# Lokasi Peta Situs
+Sitemap: https://portofolio-twenty.vercel.app/sitemap.xml

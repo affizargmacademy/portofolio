@@ -320,18 +320,10 @@
       align-items:center;
     }
     .post-meta i{ color: var(--bg); }
-
-    .post-link{
-      display:block;
-      color: inherit;
-      height:100%;
-    }
+    .post-link{ display:block; color: inherit; height:100%; }
 
     /* Pagination */
-    .page-link{
-      color:#241012;
-      border-color: rgba(90,15,29,.12);
-    }
+    .page-link{ color:#241012; border-color: rgba(90,15,29,.12); }
     .page-item.active .page-link{
       background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
       border-color: rgba(212,175,55,.55);
@@ -385,12 +377,8 @@
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
     .to-top:hover{ box-shadow: var(--gold-glow); color:#fff; }
 
-    @media (max-width: 991.98px){
-      .side-box{ position: static; }
-    }
-    @media (max-width: 575.98px){
-      .hero-wave{ height: 62px; }
-    }
+    @media (max-width: 991.98px){ .side-box{ position: static; } }
+    @media (max-width: 575.98px){ .hero-wave{ height: 62px; } }
   </style>
   <!--akhir section 3: CSS-->
 </head>
@@ -454,7 +442,7 @@
       </svg>
     </div>
   </header>
-  <!--akhir section 4: HERO + NAVBAR-->
+  <!--akhir section 4-->
 
   <!--awal section 5: MAIN-->
   <main class="content-wrap">
@@ -462,7 +450,7 @@
     <section class="container pb-5">
       <div class="text-center mb-4">
         <h2 class="section-title">Daftar Artikel</h2>
-        <p class="section-sub">Gunakan pencarian & kategori untuk memfilter artikel. Ini semua dummy dan bisa kamu ganti.</p>
+        <p class="section-sub">Gunakan pencarian & kategori untuk memfilter artikel. Klik kartu untuk buka halaman detail (1 artikel = 1 halaman).</p>
       </div>
 
       <div class="row g-4">
@@ -489,8 +477,7 @@
 
             <div class="side-title"><i class="bi bi-info-circle me-2"></i>Catatan</div>
             <p class="mb-0" style="color:#6c5a5c;font-size:13px;line-height:1.65;">
-              Klik kartu artikel untuk membuka halaman detail di tab baru:
-              <b>artikel-detail.html?slug=...</b>
+              Detail artikel sudah <b>per halaman</b> (contoh: <b>artikel-landing-page-bootstrap.html</b>).
             </p>
           </div>
         </div>
@@ -498,9 +485,10 @@
         <!-- Posts -->
         <div class="col-lg-8">
           <div class="row g-4" id="postGrid">
-            <!-- Card 1 -->
+
+            <!-- 1 -->
             <div class="col-md-6 post-item" data-cat="bootstrap" data-title="Landing page bootstrap rapi dan anti geser">
-              <a class="post-link" href="artikel-detail.html?slug=landing-page-bootstrap" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">Bootstrap</span>
@@ -519,9 +507,9 @@
               </a>
             </div>
 
-            <!-- Card 2 -->
+            <!-- 2 -->
             <div class="col-md-6 post-item" data-cat="ui" data-title="ui implementation dari figma ke html css">
-              <a class="post-link" href="artikel-detail.html?slug=ui-implementation-figma" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-ui-implementation-figma.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">UI</span>
@@ -540,9 +528,9 @@
               </a>
             </div>
 
-            <!-- Card 3 -->
+            <!-- 3 -->
             <div class="col-md-6 post-item" data-cat="seo" data-title="seo on page untuk portfolio meta schema">
-              <a class="post-link" href="artikel-detail.html?slug=seo-onpage-portfolio" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-seo-onpage-portfolio.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">SEO</span>
@@ -561,9 +549,9 @@
               </a>
             </div>
 
-            <!-- Card 4 -->
+            <!-- 4 -->
             <div class="col-md-6 post-item" data-cat="produktif" data-title="cara multitasking cepat tanpa berantakan">
-              <a class="post-link" href="artikel-detail.html?slug=multitasking-cepat" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-multitasking-cepat.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">Produktif</span>
@@ -582,9 +570,9 @@
               </a>
             </div>
 
-            <!-- Card 5 -->
+            <!-- 5 -->
             <div class="col-md-6 post-item" data-cat="leadership" data-title="leadership osis koordinasi tim dan public speaking">
-              <a class="post-link" href="artikel-detail.html?slug=leadership-osis" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-leadership-osis.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">Leadership</span>
@@ -603,9 +591,9 @@
               </a>
             </div>
 
-            <!-- Card 6 -->
+            <!-- 6 -->
             <div class="col-md-6 post-item" data-cat="bootstrap" data-title="komponen bootstrap yang wajib untuk portfolio">
-              <a class="post-link" href="artikel-detail.html?slug=komponen-bootstrap-portfolio" target="_blank" rel="noopener">
+              <a class="post-link" href="artikel-komponen-bootstrap-portfolio.html" target="_blank" rel="noopener">
                 <article class="post-card">
                   <div class="post-top">
                     <span class="badge-soft">Bootstrap</span>
@@ -616,6 +604,69 @@
                     <p class="post-excerpt">Navbar, hero, cards, badges, timeline, dan tips styling supaya terlihat premium.</p>
                     <div class="post-meta">
                       <span><i class="bi bi-clock"></i> 5 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- 7 (tambahan) -->
+            <div class="col-md-6 post-item" data-cat="bootstrap" data-title="responsive bootstrap breakpoint grid pola aman">
+              <a class="post-link" href="artikel-responsive-bootstrap.html" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">Bootstrap</span>
+                    <div class="post-ic"><i class="bi bi-bootstrap fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">Responsive Bootstrap: Breakpoint, Grid, dan Pola Aman</h3>
+                    <p class="post-excerpt">Cara memilih breakpoint, menyusun grid, dan menghindari layout aneh di HP.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 6 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- 8 (tambahan) -->
+            <div class="col-md-6 post-item" data-cat="ui" data-title="ui consistency spacing scale komponen konsisten">
+              <a class="post-link" href="artikel-ui-consistency-system.html" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">UI</span>
+                    <div class="post-ic"><i class="bi bi-layout-text-window fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">UI Consistency: Skala Spacing & Komponen Biar Konsisten</h3>
+                    <p class="post-excerpt">Framework kecil untuk konsistensi UI: spacing scale, typographic scale, komponen reusable.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 7 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- 9 (tambahan) -->
+            <div class="col-md-6 post-item" data-cat="seo" data-title="seo technical dasar sitemap robots performance">
+              <a class="post-link" href="artikel-seo-technical-basic.html" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">SEO</span>
+                    <div class="post-ic"><i class="bi bi-search fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">SEO Technical Dasar: Sitemap, Robots, dan Performance</h3>
+                    <p class="post-excerpt">Langkah praktis SEO technical di portofolio: sitemap, robots.txt, dan speed.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 7 menit</span>
                       <span><i class="bi bi-calendar3"></i> 2026</span>
                       <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
                     </div>
@@ -636,12 +687,13 @@
               <li class="page-item"><a class="page-link" href="#">Berikutnya</a></li>
             </ul>
           </nav>
+
         </div>
       </div>
     </section>
-    <!--akhir section 6: FILTER + LIST-->
+    <!--akhir section 6-->
   </main>
-  <!--akhir section 5: MAIN-->
+  <!--akhir section 5-->
 
   <!--awal section 7: FOOTER-->
   <footer class="footer pt-5 pb-4">
@@ -706,7 +758,7 @@
       </div>
     </div>
   </footer>
-  <!--akhir section 7: FOOTER-->
+  <!--akhir section 7-->
 
   <!-- Floating Scroll To Top -->
   <a class="to-top" id="toTop" href="#top" aria-label="Kembali ke atas">
@@ -789,6 +841,6 @@
 
     })();
   </script>
-  <!--akhir section 8: JS-->
+  <!--akhir section 8-->
 </body>
 </html>
