@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <!--awal section 1: SEO + Meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tentang — Portofolio Muhammad Affizar Ibrahim Alkautsar</title>
+  <meta name="description" content="Halaman Tentang Muhammad Affizar Ibrahim Alkautsar, fresh graduate SMKN 3 Jember (RPL). Web Developer, leadership kuat, public speaking, sosial, dan multitasking.">
+  <meta name="keywords" content="Tentang Affizar, Muhammad Affizar Ibrahim Alkautsar, Web Developer, SMKN 3 Jember, RPL, Leadership, Public Speaking, Portofolio">
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
+
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Tentang — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta property="og:description" content="Fresh graduate SMKN 3 Jember (RPL). Web Developer + leadership, public speaking, sosial, multitasking.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tentang — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="twitter:description" content="Fresh graduate SMKN 3 Jember (RPL). Web Developer + leadership, public speaking, sosial, multitasking.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+
+  <!-- Favicon (SVG data-uri) -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="14" fill="%235a0f1d"/%3E%3Cpath d="M18 26h28v4H18zM18 34h22v4H18z" fill="%23fff6dd"/%3E%3Ccircle cx="46" cy="36" r="3" fill="%23d4af37"/%3E%3C/svg%3E'>
+  <link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"%3E%3Crect width="180" height="180" rx="40" fill="%235a0f1d"/%3E%3Cpath d="M50 72h80v12H50zM50 96h62v12H50z" fill="%23fff6dd"/%3E%3Ccircle cx="130" cy="110" r="10" fill="%23d4af37"/%3E%3C/svg%3E'>
+  <!--akhir section 1: SEO + Meta-->
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (AI Overview / rich results) -->
+  <!--awal section 2: JSON-LD-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Affizar Ibrahim Alkautsar",
+    "jobTitle": "Web Developer",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "SMKN 3 Jember",
+      "department": "Rekayasa Perangkat Lunak"
+    },
+    "knowsAbout": ["Web Development", "Bootstrap", "Frontend", "UI Implementation", "Public Speaking", "Leadership", "Multitasking"],
+    "description": "Fresh graduate SMKN 3 Jember jurusan RPL. Mahir web development, leadership (Ketua OSIS 2 periode), Ketua Umum Forum OSIS SMK se-Kabupaten Jember, Ketua Umum ekstrakurikuler supporter Skaga Wonderfull, public speaking kuat, sosial hebat, multitasking cepat."
+  }
+  </script>
+  <!--akhir section 2: JSON-LD-->
+
+  <!--awal section 3: CSS-->
+  <style>
+    :root{
+      --bg: #5a0f1d;
+      --bg-2:#3b0a13;
+      --text:#fff6dd;
+      --muted:#f0dfb0;
+      --line: rgba(255,246,221,.16);
+      --accent:#d4af37;
+      --accent-2:#ffd36a;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --soft-shadow: 0 14px 40px rgba(0,0,0,.08);
+      --gold-glow: 0 0 0 1px rgba(212,175,55,.25), 0 18px 44px rgba(212,175,55,.18);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x:hidden;
+      background:#f6f0e4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ text-decoration:none; }
+    .container, .container-fluid, header, main, section, footer{ overflow-x: clip; }
+    img, svg{ max-width:100%; height:auto; }
+    .no-x{ overflow-x:hidden !important; }
+
+    /* HERO TOP (halaman about) */
+    .hero-wrap{
+      position: relative;
+      background:
+        radial-gradient(1200px 420px at 65% 40%, rgba(255,246,221,.08), transparent 60%),
+        radial-gradient(900px 380px at 20% 10%, rgba(212,175,55,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      box-shadow: var(--shadow);
+      isolation:isolate;
+    }
+    .hero-wrap:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.9;
+      background-image:
+        radial-gradient(circle at 18% 32%, rgba(212,175,55,.95) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 54%, rgba(255,246,221,.70) 0 1px, transparent 2px),
+        radial-gradient(circle at 45% 26%, rgba(255,246,221,.50) 0 1px, transparent 2px),
+        radial-gradient(circle at 52% 44%, rgba(255,246,221,.28) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(212,175,55,.65) 0 1.5px, transparent 2.5px);
+      mix-blend-mode: screen;
+      z-index:0;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      padding: 26px 0 68px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      color: var(--text);
+      font-size: 20px;
+      white-space:nowrap;
+    }
+    .nav-link-custom{
+      color: rgba(255,246,221,.75);
+      font-weight:500;
+      font-size: 14px;
+      padding: .35rem .7rem !important;
+    }
+    .nav-link-custom:hover{ color: #ffffff; }
+    .nav-link-custom.active{
+      color:#fff !important;
+      position: relative;
+    }
+    .nav-link-custom.active:after{
+      content:"";
+      position:absolute;
+      left:.7rem;
+      right:.7rem;
+      bottom: .1rem;
+      height:2px;
+      background: linear-gradient(90deg, rgba(212,175,55,.0), rgba(212,175,55,.9), rgba(212,175,55,.0));
+      border-radius:999px;
+    }
+
+    .btn-pill{
+      border-radius: 999px;
+      padding: .55rem 1.05rem;
+      font-weight:600;
+      font-size: 14px;
+      border: 1px solid transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      white-space:nowrap;
+    }
+    .btn-contact{
+      background: linear-gradient(180deg, var(--accent) 0%, #bf9830 100%);
+      color:#2a1a00;
+      border: 1px solid rgba(255,211,106,.35);
+      box-shadow: var(--gold-glow);
+    }
+    .btn-contact:hover{
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      color:#2a1a00;
+    }
+
+    .page-title{
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight:800;
+      letter-spacing:-.6px;
+      line-height:1.1;
+      margin: 14px 0 10px;
+    }
+    .page-lead{
+      color: rgba(255,246,221,.78);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 72ch;
+      margin: 0;
+    }
+
+    .hero-wave{
+      position:absolute;
+      left:0; right:0; bottom:-1px;
+      width:100%;
+      height: 96px;
+      z-index:1;
+      pointer-events:none;
+    }
+    .hero-wave svg{ width:100%; height:100%; display:block; }
+
+    /* CONTENT */
+    .content-wrap{
+      background:#ffffff;
+      margin-top:-28px;
+      padding-top: 58px;
+      border-top-left-radius: 34px;
+      border-top-right-radius: 34px;
+      box-shadow: 0 -20px 60px rgba(0,0,0,.08);
+    }
+    .section-title{
+      font-weight:800;
+      letter-spacing:-.2px;
+      color:#241012;
+    }
+    .section-sub{
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 72ch;
+      margin: 0 auto;
+    }
+
+    /* CARDS */
+    .info-card{
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 18px;
+      padding: 18px;
+      background: #fff;
+      box-shadow: var(--soft-shadow);
+      height:100%;
+      position: relative;
+      overflow:hidden;
+    }
+    .info-card:before{
+      content:"";
+      position:absolute;
+      inset:-60px -60px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.22), transparent 62%);
+      transform: rotate(8deg);
+      pointer-events:none;
+    }
+    .info-card h5{
+      font-weight:800;
+      margin: 0 0 6px;
+      color:#241012;
+    }
+    .info-card p{
+      margin:0;
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+    .icon-box{
+      width: 52px; height:52px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(90,15,29,.06);
+      color: var(--bg);
+      border: 1px solid rgba(212,175,55,.18);
+      box-shadow: 0 12px 26px rgba(0,0,0,.06);
+      margin-bottom: 12px;
+    }
+
+    /* TIMELINE */
+    .timeline{
+      border-left: 2px solid rgba(90,15,29,.12);
+      padding-left: 18px;
+    }
+    .t-item{
+      position: relative;
+      padding: 12px 0 12px 0;
+    }
+    .t-item:before{
+      content:"";
+      position:absolute;
+      left:-26px;
+      top: 18px;
+      width: 14px;
+      height: 14px;
+      border-radius:999px;
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+      box-shadow: var(--gold-glow);
+      border: 2px solid #fff;
+    }
+    .t-item .t-title{
+      font-weight:800;
+      color:#241012;
+      margin:0 0 4px;
+    }
+    .t-item .t-desc{
+      margin:0;
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: .45rem .75rem;
+      border-radius:999px;
+      background: hwb(60 99% 1%);
+      border:1px solid rgba(212,175,55,.40);
+      color:#4a3300;
+      font-weight:800;      
+      font-size: 12px;
+      white-space:nowrap;
+    }
+
+    /* CTA BOX */
+    .cta-box{
+      background:
+        radial-gradient(900px 260px at 70% 0%, rgba(212,175,55,.18), transparent 60%),
+        linear-gradient(180deg, rgba(90,15,29,.06), rgba(90,15,29,.02));
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    /* FOOTER */
+    .footer{
+      background: linear-gradient(180deg, #3b0a13 0%, #2a070e 100%);
+      color: rgba(255,246,221,.82);
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+      box-shadow: 0 -16px 50px rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .footer:before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -120px auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.22), transparent 62%);
+      pointer-events:none;
+      transform: rotate(12deg);
+    }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#ffffff; }
+
+    /* Scroll-to-top */
+    .to-top{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      border: 1px solid rgba(212,175,55,.25);
+      opacity:0;
+      transform: translateY(10px);
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease, background .18s ease;
+      z-index: 9999;
+    }
+    .to-top:hover{
+      background: linear-gradient(180deg, var(--bg) 0%, #24060b 100%);
+      color: #ffffff;
+      box-shadow: var(--gold-glow);
+    }
+    .to-top.show{
+      opacity:1;
+      transform: translateY(0);
+      pointer-events:auto;
+    }
+
+    @media (max-width: 575.98px){
+      .content-wrap{ padding-top: 52px; }
+    }
+    /* ===== FIX PROPORSI ABOUT HERO ===== */
+.hero-inner{
+  padding: 20px 0 46px; /* sebelumnya terlalu tinggi */
+}
+
+.hero-grid{
+  padding-top: 8px !important;
+}
+
+.page-title{
+  font-size: clamp(26px, 3.2vw, 42px);
+  max-width: 18ch;
+}
+
+.page-lead{
+  max-width: 70ch;
+  font-size: 14px;
+}
+
+.hero-card{
+  background: rgba(255,246,221,.06);
+  border: 1px solid rgba(255,246,221,.14);
+  border-radius: 22px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 22px 60px rgba(0,0,0,.20);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card:before{
+  content:"";
+  position:absolute;
+  inset:-80px -90px auto auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.20), transparent 62%);
+  transform: rotate(10deg);
+  pointer-events:none;
+}
+
+.hero-ic{
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(212,175,55,.18);
+  border: 1px solid rgba(212,175,55,.42);
+  color: #2a1a00;
+  box-shadow: 0 16px 36px rgba(212,175,55,.18);
+  flex: 0 0 auto;
+}
+
+.hero-card-title{
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -.2px;
+  margin-top: 2px;
+}
+
+.hero-card-sub{
+  color: rgba(255,246,221,.78);
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+.hero-divider{
+  height:1px;
+  background: rgba(255,246,221,.14);
+  margin: 12px 0;
+}
+
+.hero-point{
+  color: rgba(255,246,221,.86);
+  font-size: 12.5px;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  line-height: 1.5;
+}
+.hero-point i{ color: var(--accent-2); margin-top: 1px; }
+
+/* wave jangan terlalu "naik" */
+.hero-wave{ height: 78px; }
+.hero-wave path:nth-child(1){ opacity:.08; }
+
+/* responsive tuning */
+@media (max-width: 991.98px){
+  .hero-inner{ padding-bottom: 36px; }
+  .hero-card{ margin-top: 10px; }
+}
+
+@media (max-width: 575.98px){
+  .page-title{ max-width: none; }
+  .hero-wave{ height: 62px; }
+}
+
+  </style>
+  <!--akhir section 3: CSS-->
+</head>
+
+<body class="no-x">
+  <!--awal section 4: HERO + NAVBAR (HTML)-->
+  <header class="hero-wrap" id="home">
+    <div class="container hero-inner">
+      <nav class="navbar navbar-expand-lg navbar-dark py-2">
+        <a class="navbar-brand brand" href="index.html#home" aria-label="Portofolio Affizar">Affizar</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="artikel.html">Artikel</a></li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-pill btn-contact" href="#contact">Kontak</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+      <div class="row align-items-center g-4 g-lg-5 pt-3 hero-grid">
+        <div class="col-lg-7">
+          <span class="pill"><i class="bi bi-person-badge"></i> Profil Singkat</span>
+          <h1 class="page-title">Tentang Saya</h1>
+          <p class="page-lead">
+            Saya <b>Muhammad Affizar Ibrahim Alkautsar</b>, fresh graduate <b>SMKN 3 Jember</b> jurusan <b>Rekayasa Perangkat Lunak</b>.
+            Saya fokus pada pengembangan web (khususnya Bootstrap) dengan gaya kerja rapi, responsif, dan terstruktur.
+          </p>
+      
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="pill"><i class="bi bi-code-slash"></i> Web Dev</span>
+            <span class="pill"><i class="bi bi-mic"></i> Public Speaking</span>
+            <span class="pill"><i class="bi bi-people"></i> Leadership</span>
+            <span class="pill"><i class="bi bi-lightning-charge"></i> Multitasking</span>
+          </div>
+        </div>
+      
+        <div class="col-lg-5">
+          <div class="hero-card">
+            <div class="d-flex align-items-start gap-3">
+              <div class="hero-ic"><i class="bi bi-stars fs-4"></i></div>
+              <div class="flex-grow-1">
+                <div class="hero-card-title">Highlight</div>
+                <div class="hero-card-sub">
+                  Ketua OSIS <b>2 periode</b> • Ketua Umum <b>Forum OSIS SMK se-Kab. Jember</b> • Ketua Umum <b>Skaga Wonderfull</b> • Public speaking kuat • Sosial hebat
+                </div>
+      
+                <div class="hero-divider"></div>
+      
+                <div class="d-grid gap-2">
+                  <div class="hero-point"><i class="bi bi-check2-circle"></i> Terbiasa memimpin tim & program kerja</div>
+                  <div class="hero-point"><i class="bi bi-check2-circle"></i> Komunikasi efektif & percaya diri</div>
+                  <div class="hero-point"><i class="bi bi-check2-circle"></i> Eksekusi cepat, rapi, terstruktur</div>
+                </div>
+      
+                <div class="mt-3">
+                  <a class="btn btn-pill btn-contact w-100" href="index.html#contact">Ajak Kolaborasi</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <path fill="rgba(0,0,0,.10)"
+          d="M0,72 C240,132 360,12 720,72 C1080,132 1200,12 1440,72 L1440,140 L0,140 Z"></path>
+        <path fill="#ffffff"
+          d="M0,64 C240,124 360,4 720,64 C1080,124 1200,4 1440,64 L1440,140 L0,140 Z"></path>
+      </svg>
+    </div>
+  </header>
+  <!--akhir section 4: HERO + NAVBAR (HTML)-->
+
+  <!--awal section 5: MAIN (HTML)-->
+  <main class="content-wrap">
+    <!--awal section 6: PROFIL RINGKAS (HTML)-->
+    <section class="container pb-5" id="profil">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Profil Ringkas</h2>
+        <p class="section-sub mt-2">
+          Saya suka tantangan, cepat beradaptasi, dan terbiasa bekerja dalam tim maupun memimpin. Saya juga percaya bahwa UI yang rapi = pengalaman yang nyaman.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card">
+            <div class="icon-box"><i class="bi bi-code-slash fs-4"></i></div>
+            <h5>Fokus Web Developer</h5>
+            <p>Membangun landing page / website yang responsif, rapi, anti “geser kanan-kiri”, dan siap dikembangkan.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card">
+            <div class="icon-box"><i class="bi bi-mic fs-4"></i></div>
+            <h5>Public Speaking</h5>
+            <p>Terbiasa presentasi, memimpin forum, dan menyampaikan ide dengan jelas serta percaya diri.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="info-card">
+            <div class="icon-box"><i class="bi bi-diagram-3 fs-4"></i></div>
+            <h5>Leadership & Sosial</h5>
+            <p>Leadership kuat, skill bersosial bagus, dan multitasking cepat dalam mengelola banyak tanggung jawab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--akhir section 6: PROFIL RINGKAS (HTML)-->
+
+    <!--awal section 7: TIMELINE (HTML)-->
+    <section class="py-5" style="background: linear-gradient(180deg, #ffffff 0%, #fbf6ea 100%);" id="timeline">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Perjalanan & Pengalaman</h2>
+          <p class="section-sub mt-2">
+            Berikut ringkasan perjalanan pendidikan dan organisasi yang membentuk karakter saya.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-7">
+            <div class="timeline">
+              <div class="t-item">
+                <div class="t-title">Fresh Graduate — SMKN 3 Jember (RPL)</div>
+                <p class="t-desc">Belajar dasar-dasar rekayasa perangkat lunak, pengembangan web, dan kebiasaan kerja terstruktur.</p>
+              </div>
+              <div class="t-item">
+                <div class="t-title">Ketua OSIS — 2 Periode</div>
+                <p class="t-desc">Memimpin program kerja, koordinasi tim, komunikasi lintas pihak, serta eksekusi kegiatan sekolah.</p>
+              </div>
+              <div class="t-item">
+                <div class="t-title">Ketua Umum — Forum OSIS SMK se-Kab. Jember</div>
+                <p class="t-desc">Koordinasi lintas sekolah, public speaking, penyusunan agenda, dan manajemen kegiatan skala besar.</p>
+              </div>
+              <div class="t-item">
+                <div class="t-title">Ketua Umum — Ekstrakurikuler Supporter “Skaga Wonderfull”</div>
+                <p class="t-desc">Manajemen komunitas, teamwork, komunikasi sosial, dan konsistensi menjalankan kegiatan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="cta-box">
+              <div class="fw-bold text-dark mb-1">Ringkas Keunggulan</div>
+              <div class="text-muted" style="font-size:12px; line-height:1.7;">
+                Saya menggabungkan kemampuan teknis web dengan leadership dan komunikasi. Cocok untuk role yang butuh eksekusi cepat, koordinasi, dan hasil yang rapi.
+              </div>
+
+              <hr class="my-3" style="border-color: rgba(90,15,29,.10);">
+
+              <div class="d-flex flex-wrap gap-2">
+                <span class="pill"><i class="bi bi-phone"></i> Responsive</span>
+                <span class="pill"><i class="bi bi-ui-checks"></i> Rapi</span>
+                <span class="pill"><i class="bi bi-lightning-charge"></i> Cepat</span>
+                <span class="pill"><i class="bi bi-chat-dots"></i> Komunikatif</span>
+                <span class="pill"><i class="bi bi-people"></i> Sosial</span>
+                <span class="pill"><i class="bi bi-layers"></i> Multitasking</span>
+              </div>
+
+              <div class="mt-3">
+                <a class="btn btn-pill btn-contact w-100" href="index.html#contact">Ajak Kolaborasi</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--akhir section 7: TIMELINE (HTML)-->
+
+    <!--awal section 8: CTA KECIL (HTML)-->
+    <section class="py-5" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-8">
+              <h3 class="section-title mb-1" style="font-size:22px;">Butuh Web Developer dengan leadership kuat?</h3>
+              <p class="mb-0" style="color:#6c5a5c;font-size:13px;line-height:1.7;">
+                Saya siap membantu implementasi UI/Bootstrap, landing page, dan perbaikan layout responsif agar tampilan lebih rapi dan profesional.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-pill btn-contact" href="index.html#resources">Lihat Proyek</a>
+              <a class="btn btn-pill btn-store ms-2" style="background: rgba(0,0,0,.08); color:#241012; border:1px solid rgba(90,15,29,.12); box-shadow:none;" href="index.html#contact">Kontak</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--akhir section 8: CTA KECIL (HTML)-->
+  </main>
+  <!--akhir section 5: MAIN (HTML)-->
+
+  <!--awal section 9: FOOTER (HTML)-->
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="brand mb-2">Muhammad Affizar</div>
+          <p class="mb-3" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.75;max-width:56ch;">
+            Web Developer (Bootstrap) • Leadership • Public Speaking • Sosial • Multitasking.
+            Fresh graduate SMKN 3 Jember (RPL).
+          </p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#home" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#home" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#home" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#contact" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Navigasi</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="about.html">Tentang</a>
+            <a href="index.html#services">Keahlian</a>
+            <a href="index.html#resources">Proyek</a>
+            <a href="index.html#pricing">Organisasi</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Highlight</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="index.html#pricing">Ketua OSIS (2 Periode)</a>
+            <a href="index.html#pricing">Forum OSIS SMK Jember</a>
+            <a href="index.html#pricing">Skaga Wonderfull</a>
+            <a href="index.html#contact">Kolaborasi</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="fw-bold mb-2">Newsletter</div>
+          <p class="mb-2" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.65;">
+            Jika mau update proyek terbaru, isi email di bawah.
+          </p>
+          <form class="d-flex gap-2" id="newsForm" novalidate>
+            <input class="form-control form-control-sm" type="email" placeholder="Email" required>
+            <button class="btn btn-sm btn-light rounded-pill fw-semibold" type="submit">Join</button>
+          </form>
+          <div class="small mt-2" id="newsMsg" style="color:rgba(255,246,221,.78)"></div>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,246,221,.18);">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2" style="font-size:12px;color:rgba(255,246,221,.72);">
+        <div>© <span id="year"></span> Muhammad Affizar Ibrahim Alkautsar. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="index.html#home">Privasi</a>
+          <a href="index.html#home">Syarat</a>
+          <a href="index.html#home">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--akhir section 9: FOOTER (HTML)-->
+
+  <!-- Floating Scroll To Top -->
+  <a class="to-top" id="toTop" href="#home" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!--awal section 10: JS-->
+  <script>
+    (function () {
+      // year
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // smooth scroll + auto close navbar on mobile
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href');
+          if (!id || id === '#') return;
+          var el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+
+          var nav = document.getElementById('topNav');
+          if (nav && nav.classList.contains('show')) {
+            var bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+            bsCollapse.hide();
+          }
+
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', id);
+        });
+      });
+
+      // to top
+      var toTop = document.getElementById('toTop');
+      function toggleToTop() {
+        if (!toTop) return;
+        if (window.scrollY > 380) toTop.classList.add('show');
+        else toTop.classList.remove('show');
+      }
+      toggleToTop();
+      window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // anti horizontal scroll
+      function clampOverflow() {
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+      }
+      clampOverflow();
+      window.addEventListener('resize', clampOverflow, { passive: true });
+
+      // newsletter (no backend)
+      var newsForm = document.getElementById('newsForm');
+      var newsMsg = document.getElementById('newsMsg');
+      if (newsForm) {
+        newsForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = newsForm.querySelector('input[type="email"]');
+          var ok = email && email.value && email.checkValidity();
+          if (!newsMsg) return;
+          newsMsg.textContent = ok ? 'Mantap! Anda sudah terdaftar newsletter.' : 'Email tidak valid.';
+          if (ok) newsForm.reset();
+        });
+      }
+    })();
+  </script>
+  <!--akhir section 10: JS-->
+</body>
+</html>

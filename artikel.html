@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <!--awal section 1: SEO + Meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Artikel — Portofolio Muhammad Affizar Ibrahim Alkautsar</title>
+  <meta name="description" content="Artikel seputar web development (Bootstrap), UI implementation, SEO dasar, serta produktivitas dan leadership dari Muhammad Affizar Ibrahim Alkautsar.">
+  <meta name="keywords" content="Artikel, Blog, Muhammad Affizar Ibrahim Alkautsar, Web Developer, Bootstrap, UI, SEO, Leadership, Public Speaking">
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Artikel — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta property="og:description" content="Catatan dan tulisan tentang web development, UI, SEO, produktivitas, dan leadership.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <!--akhir section 1: SEO + Meta-->
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <!--awal section 2: JSON-LD-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Artikel Muhammad Affizar Ibrahim Alkautsar",
+    "description": "Artikel seputar web development, UI, SEO dasar, produktivitas, dan leadership.",
+    "inLanguage": "id-ID",
+    "author": {
+      "@type": "Person",
+      "name": "Muhammad Affizar Ibrahim Alkautsar"
+    }
+  }
+  </script>
+  <!--akhir section 2: JSON-LD-->
+
+  <!--awal section 3: CSS-->
+  <style>
+    :root{
+      --bg: #5a0f1d;
+      --bg-2:#3b0a13;
+      --text:#fff6dd;
+      --muted:#f0dfb0;
+      --line: rgba(255,246,221,.16);
+      --accent:#d4af37;
+      --accent-2:#ffd36a;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --soft-shadow: 0 14px 40px rgba(0,0,0,.08);
+      --gold-glow: 0 0 0 1px rgba(212,175,55,.25), 0 18px 44px rgba(212,175,55,.18);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x:hidden;
+      background:#f6f0e4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ text-decoration:none; }
+    .container, header, main, section, footer{ overflow-x: clip; }
+    .no-x{ overflow-x:hidden !important; }
+
+    /* NAV / BRAND */
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+      color: var(--text);
+      font-size: 20px;
+      white-space:nowrap;
+    }
+    .nav-link-custom{
+      color: rgba(255,246,221,.75);
+      font-weight:600;
+      font-size: 14px;
+      padding: .35rem .7rem !important;
+    }
+    .nav-link-custom:hover{ color: #fff; }
+    .btn-pill{
+      border-radius: 999px;
+      padding: .55rem 1.05rem;
+      font-weight:700;
+      font-size: 14px;
+      border: 1px solid transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      white-space:nowrap;
+    }
+    .btn-contact{
+      background: linear-gradient(180deg, var(--accent) 0%, #bf9830 100%);
+      color:#2a1a00;
+      border: 1px solid rgba(255,211,106,.35);
+      box-shadow: var(--gold-glow);
+    }
+    .btn-contact:hover{
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      color:#2a1a00;
+    }
+
+    /* HERO */
+    .hero-wrap{
+      position: relative;
+      background:
+        radial-gradient(1200px 420px at 65% 40%, rgba(255,246,221,.08), transparent 60%),
+        radial-gradient(900px 380px at 20% 10%, rgba(212,175,55,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      box-shadow: var(--shadow);
+      isolation:isolate;
+    }
+    .hero-wrap:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.9;
+      background-image:
+        radial-gradient(circle at 18% 32%, rgba(212,175,55,.95) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 54%, rgba(255,246,221,.70) 0 1px, transparent 2px),
+        radial-gradient(circle at 45% 26%, rgba(255,246,221,.50) 0 1px, transparent 2px),
+        radial-gradient(circle at 52% 44%, rgba(255,246,221,.28) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(212,175,55,.65) 0 1.5px, transparent 2.5px);
+      mix-blend-mode: screen;
+      z-index:0;
+    }
+    .hero-inner{ position:relative; z-index:1; padding: 20px 0 48px; }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:.45rem .75rem;
+      border-radius:999px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,246,221,.14);
+      color: rgba(255,246,221,.92);
+      font-size: 12px;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+    .page-title{
+      font-size: clamp(28px, 3.4vw, 44px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+      margin: 10px 0 10px;
+      max-width: 24ch;
+    }
+    .page-lead{
+      color: rgba(255,246,221,.78);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 86ch;
+      margin: 0;
+    }
+
+    .hero-side{
+      background: rgba(255,246,221,.06);
+      border: 1px solid rgba(255,246,221,.14);
+      border-radius: 22px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.20);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side:before{
+      content:"";
+      position:absolute;
+      inset:-80px -90px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.20), transparent 62%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
+
+    .hero-wave{
+      position:absolute; left:0; right:0; bottom:-1px;
+      width:100%; height: 78px;
+      z-index:1; pointer-events:none;
+    }
+    .hero-wave svg{ width:100%; height:100%; display:block; }
+
+    /* CONTENT */
+    .content-wrap{
+      background:#ffffff;
+      margin-top:-28px;
+      padding-top: 62px;
+      border-top-left-radius: 34px;
+      border-top-right-radius: 34px;
+      box-shadow: 0 -20px 60px rgba(0,0,0,.08);
+    }
+    .section-title{
+      font-weight: 800;
+      letter-spacing:-.2px;
+      color:#241012;
+      margin:0;
+    }
+    .section-sub{
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 78ch;
+      margin: 10px auto 0;
+    }
+
+    /* SIDEBAR */
+    .side-box{
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 18px;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+      padding: 16px;
+      position: sticky;
+      top: 16px;
+    }
+    .side-title{
+      font-weight: 800;
+      color:#241012;
+      margin:0 0 10px;
+      font-size: 14px;
+    }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      background: rgba(212,175,55,.16);
+      border: 1px solid rgba(212,175,55,.40);
+      color:#4a3300;
+      font-weight:800;
+      font-size: 11px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .chip.active{
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      border-color: rgba(255,211,106,.55);
+    }
+
+    /* CARDS */
+    .post-card{
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 18px;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+      overflow:hidden;
+      height:100%;
+      transition: transform .18s ease, box-shadow .18s ease;
+      position: relative;
+    }
+    .post-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 20px 52px rgba(0,0,0,.10);
+    }
+    .post-top{
+      padding: 14px 16px 0;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .badge-soft{
+      background: rgba(212,175,55,.20);
+      border: 1px solid rgba(212,175,55,.55);
+      color:#4a3300;
+      font-weight:800;
+      font-size: 11px;
+      border-radius: 999px;
+      padding: .35rem .6rem;
+      white-space:nowrap;
+      height: fit-content;
+    }
+    .post-ic{
+      width: 46px; height:46px;
+      border-radius: 16px;
+      display:grid;
+      place-items:center;
+      background: rgba(90,15,29,.06);
+      border: 1px solid rgba(212,175,55,.18);
+      color: var(--bg);
+      flex: 0 0 auto;
+    }
+    .post-body{ padding: 10px 16px 16px; }
+    .post-title{
+      font-weight: 800;
+      color:#241012;
+      margin: 4px 0 6px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    .post-excerpt{
+      margin: 0 0 12px;
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .post-meta{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      color:#6c5a5c;
+      font-size: 12px;
+      align-items:center;
+    }
+    .post-meta i{ color: var(--bg); }
+
+    .post-link{
+      display:block;
+      color: inherit;
+      height:100%;
+    }
+
+    /* Pagination */
+    .page-link{
+      color:#241012;
+      border-color: rgba(90,15,29,.12);
+    }
+    .page-item.active .page-link{
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      border-color: rgba(212,175,55,.55);
+      color:#2a1a00;
+      font-weight:800;
+    }
+
+    /* FOOTER */
+    .footer{
+      background: linear-gradient(180deg, #3b0a13 0%, #2a070e 100%);
+      color: rgba(255,246,221,.82);
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+      box-shadow: 0 -16px 50px rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .footer:before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -120px auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.22), transparent 62%);
+      pointer-events:none;
+      transform: rotate(12deg);
+    }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
+
+    /* Scroll-to-top */
+    .to-top{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      border: 1px solid rgba(212,175,55,.25);
+      opacity:0;
+      transform: translateY(10px);
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 9999;
+    }
+    .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
+    .to-top:hover{ box-shadow: var(--gold-glow); color:#fff; }
+
+    @media (max-width: 991.98px){
+      .side-box{ position: static; }
+    }
+    @media (max-width: 575.98px){
+      .hero-wave{ height: 62px; }
+    }
+  </style>
+  <!--akhir section 3: CSS-->
+</head>
+
+<body class="no-x">
+  <!--awal section 4: HERO + NAVBAR-->
+  <header class="hero-wrap" id="top">
+    <div class="container hero-inner">
+      <nav class="navbar navbar-expand-lg navbar-dark py-2">
+        <a class="navbar-brand brand" href="index.html" aria-label="Portofolio Affizar">Affizar</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#resources">Proyek</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom active" aria-current="page" href="artikel.html">Artikel</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-pill btn-contact" href="index.html#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5 pt-3">
+        <div class="col-lg-7">
+          <span class="pill"><i class="bi bi-journal-text"></i> Blog & Catatan</span>
+          <h1 class="page-title">Artikel & Insight</h1>
+          <p class="page-lead">
+            Kumpulan tulisan singkat tentang <b>Bootstrap</b>, <b>UI implementation</b>, <b>SEO dasar</b>,
+            serta pengalaman komunikasi & leadership. Klik kartu artikel untuk membuka detail di tab baru.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-side">
+            <div class="fw-bold" style="font-weight:800;">Topik yang sering saya tulis</div>
+            <div style="color:rgba(255,246,221,.78);font-size:13px;line-height:1.65;margin-top:6px;">
+              Bootstrap & responsif • UI rapi & konsisten • SEO on-page • Produktivitas • Leadership
+            </div>
+            <div class="mt-3 d-flex gap-2 flex-wrap">
+              <span class="badge-soft"><i class="bi bi-search me-1"></i> Cari artikel</span>
+              <span class="badge-soft"><i class="bi bi-tags me-1"></i> Kategori</span>
+              <span class="badge-soft"><i class="bi bi-lightning me-1"></i> Ringkas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <path fill="rgba(0,0,0,.10)" d="M0,72 C240,132 360,12 720,72 C1080,132 1200,12 1440,72 L1440,140 L0,140 Z"></path>
+        <path fill="#ffffff" d="M0,64 C240,124 360,4 720,64 C1080,124 1200,4 1440,64 L1440,140 L0,140 Z"></path>
+      </svg>
+    </div>
+  </header>
+  <!--akhir section 4: HERO + NAVBAR-->
+
+  <!--awal section 5: MAIN-->
+  <main class="content-wrap">
+    <!--awal section 6: FILTER + LIST-->
+    <section class="container pb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Daftar Artikel</h2>
+        <p class="section-sub">Gunakan pencarian & kategori untuk memfilter artikel. Ini semua dummy dan bisa kamu ganti.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <div class="side-box">
+            <div class="side-title"><i class="bi bi-search me-2"></i>Pencarian</div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="searchIcon"><i class="bi bi-search"></i></span>
+              <input id="searchInput" type="search" class="form-control" placeholder="Cari judul / kata kunci..." aria-label="Cari artikel" aria-describedby="searchIcon">
+            </div>
+
+            <div class="side-title"><i class="bi bi-tags me-2"></i>Kategori</div>
+            <div class="chip-row" id="chipRow" role="list">
+              <span class="chip active" data-cat="all" role="listitem"><i class="bi bi-grid"></i> Semua</span>
+              <span class="chip" data-cat="bootstrap" role="listitem"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+              <span class="chip" data-cat="ui" role="listitem"><i class="bi bi-layout-text-window"></i> UI</span>
+              <span class="chip" data-cat="seo" role="listitem"><i class="bi bi-search"></i> SEO</span>
+              <span class="chip" data-cat="produktif" role="listitem"><i class="bi bi-lightning-charge"></i> Produktif</span>
+              <span class="chip" data-cat="leadership" role="listitem"><i class="bi bi-people"></i> Leadership</span>
+            </div>
+
+            <hr style="border-color: rgba(90,15,29,.12);" class="my-3">
+
+            <div class="side-title"><i class="bi bi-info-circle me-2"></i>Catatan</div>
+            <p class="mb-0" style="color:#6c5a5c;font-size:13px;line-height:1.65;">
+              Klik kartu artikel untuk membuka halaman detail di tab baru:
+              <b>artikel-detail.html?slug=...</b>
+            </p>
+          </div>
+        </div>
+
+        <!-- Posts -->
+        <div class="col-lg-8">
+          <div class="row g-4" id="postGrid">
+            <!-- Card 1 -->
+            <div class="col-md-6 post-item" data-cat="bootstrap" data-title="Landing page bootstrap rapi dan anti geser">
+              <a class="post-link" href="artikel-detail.html?slug=landing-page-bootstrap" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">Bootstrap</span>
+                    <div class="post-ic"><i class="bi bi-bootstrap fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">Landing Page Bootstrap Rapi & Anti “Geser”</h3>
+                    <p class="post-excerpt">Checklist singkat supaya layout stabil: container, overflow-x, gambar responsif, dan grid yang benar.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 5 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 post-item" data-cat="ui" data-title="ui implementation dari figma ke html css">
+              <a class="post-link" href="artikel-detail.html?slug=ui-implementation-figma" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">UI</span>
+                    <div class="post-ic"><i class="bi bi-layout-text-window-reverse fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">UI Implementation: Figma → HTML/CSS Presisi</h3>
+                    <p class="post-excerpt">Cara jaga konsistensi spacing, font scale, dan komponen agar hasil “mirip referensi”.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 6 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6 post-item" data-cat="seo" data-title="seo on page untuk portfolio meta schema">
+              <a class="post-link" href="artikel-detail.html?slug=seo-onpage-portfolio" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">SEO</span>
+                    <div class="post-ic"><i class="bi bi-search fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">SEO On-Page untuk Portofolio (Meta + Schema)</h3>
+                    <p class="post-excerpt">Judul, deskripsi, OpenGraph, JSON-LD, heading structure, dan tips praktis biar rapi.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 7 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-6 post-item" data-cat="produktif" data-title="cara multitasking cepat tanpa berantakan">
+              <a class="post-link" href="artikel-detail.html?slug=multitasking-cepat" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">Produktif</span>
+                    <div class="post-ic"><i class="bi bi-lightning-charge fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">Multitasking Cepat Tanpa Berantakan</h3>
+                    <p class="post-excerpt">Sistem sederhana: prioritas, timebox, checklist, dan komunikasi agar progress tetap jelas.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 4 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-6 post-item" data-cat="leadership" data-title="leadership osis koordinasi tim dan public speaking">
+              <a class="post-link" href="artikel-detail.html?slug=leadership-osis" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">Leadership</span>
+                    <div class="post-ic"><i class="bi bi-people fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">Leadership OSIS: Koordinasi Tim & Komunikasi</h3>
+                    <p class="post-excerpt">Catatan pengalaman memimpin, membagi tugas, dan menyampaikan ide agar semua bergerak.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 6 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-6 post-item" data-cat="bootstrap" data-title="komponen bootstrap yang wajib untuk portfolio">
+              <a class="post-link" href="artikel-detail.html?slug=komponen-bootstrap-portfolio" target="_blank" rel="noopener">
+                <article class="post-card">
+                  <div class="post-top">
+                    <span class="badge-soft">Bootstrap</span>
+                    <div class="post-ic"><i class="bi bi-boxes fs-5"></i></div>
+                  </div>
+                  <div class="post-body">
+                    <h3 class="post-title">Komponen Bootstrap Wajib untuk Portofolio</h3>
+                    <p class="post-excerpt">Navbar, hero, cards, badges, timeline, dan tips styling supaya terlihat premium.</p>
+                    <div class="post-meta">
+                      <span><i class="bi bi-clock"></i> 5 menit</span>
+                      <span><i class="bi bi-calendar3"></i> 2026</span>
+                      <span><i class="bi bi-box-arrow-up-right"></i> Buka tab baru</span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Pagination (dummy) -->
+          <nav class="mt-4" aria-label="Pagination artikel">
+            <ul class="pagination justify-content-center mb-0">
+              <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Sebelumnya</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Berikutnya</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!--akhir section 6: FILTER + LIST-->
+  </main>
+  <!--akhir section 5: MAIN-->
+
+  <!--awal section 7: FOOTER-->
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="brand mb-2">Muhammad Affizar</div>
+          <p class="mb-3" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.75;max-width:56ch;">
+            Web Developer (Bootstrap) • Leadership • Public Speaking • Sosial • Multitasking.
+            Fresh graduate SMKN 3 Jember (RPL).
+          </p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#contact" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Navigasi</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="about.html">Tentang</a>
+            <a href="keahlian.html">Keahlian</a>
+            <a href="index.html#resources">Proyek</a>
+            <a href="organisasi.html">Organisasi</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Highlight</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="organisasi.html">Ketua OSIS (2 Periode)</a>
+            <a href="organisasi.html">Forum OSIS SMK Jember</a>
+            <a href="organisasi.html">Skaga Wonderfull</a>
+            <a href="index.html#contact">Kolaborasi</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="fw-bold mb-2">Newsletter</div>
+          <p class="mb-2" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.65;">
+            Jika mau update artikel terbaru, isi email di bawah.
+          </p>
+          <form class="d-flex gap-2" id="newsForm" novalidate>
+            <input class="form-control form-control-sm" type="email" placeholder="Email" required>
+            <button class="btn btn-sm btn-light rounded-pill fw-semibold" type="submit">Join</button>
+          </form>
+          <div class="small mt-2" id="newsMsg" style="color:rgba(255,246,221,.78)"></div>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,246,221,.18);">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2" style="font-size:12px;color:rgba(255,246,221,.72);">
+        <div>© <span id="year"></span> Muhammad Affizar Ibrahim Alkautsar. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="index.html#top">Privasi</a>
+          <a href="index.html#top">Syarat</a>
+          <a href="index.html#top">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--akhir section 7: FOOTER-->
+
+  <!-- Floating Scroll To Top -->
+  <a class="to-top" id="toTop" href="#top" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!--awal section 8: JS-->
+  <script>
+    (function () {
+      // year
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // to top
+      var toTop = document.getElementById('toTop');
+      function toggleToTop() {
+        if (!toTop) return;
+        if (window.scrollY > 380) toTop.classList.add('show');
+        else toTop.classList.remove('show');
+      }
+      toggleToTop();
+      window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // anti horizontal scroll
+      function clampOverflow() {
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+      }
+      clampOverflow();
+      window.addEventListener('resize', clampOverflow, { passive: true });
+
+      // newsletter
+      var newsForm = document.getElementById('newsForm');
+      var newsMsg = document.getElementById('newsMsg');
+      if (newsForm) {
+        newsForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = newsForm.querySelector('input[type="email"]');
+          var ok = email && email.value && email.checkValidity();
+          if (!newsMsg) return;
+          newsMsg.textContent = ok ? 'Mantap! Anda sudah terdaftar newsletter.' : 'Email tidak valid.';
+          if (ok) newsForm.reset();
+        });
+      }
+
+      // filter
+      var searchInput = document.getElementById('searchInput');
+      var chips = document.querySelectorAll('.chip');
+      var posts = document.querySelectorAll('.post-item');
+      var activeCat = 'all';
+
+      function normalize(s){ return (s || '').toLowerCase().trim(); }
+
+      function applyFilter(){
+        var q = normalize(searchInput ? searchInput.value : '');
+        posts.forEach(function(p){
+          var cat = p.getAttribute('data-cat') || '';
+          var title = p.getAttribute('data-title') || '';
+          var matchCat = (activeCat === 'all') || (cat === activeCat);
+          var matchText = !q || normalize(title).includes(q);
+          p.style.display = (matchCat && matchText) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(function(ch){
+        ch.addEventListener('click', function(){
+          chips.forEach(function(x){ x.classList.remove('active'); });
+          ch.classList.add('active');
+          activeCat = ch.getAttribute('data-cat') || 'all';
+          applyFilter();
+        });
+      });
+
+      if (searchInput){
+        searchInput.addEventListener('input', applyFilter, { passive: true });
+      }
+      applyFilter();
+
+    })();
+  </script>
+  <!--akhir section 8: JS-->
+</body>
+</html>

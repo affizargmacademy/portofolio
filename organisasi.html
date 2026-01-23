@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <!--awal section 1: SEO + Meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Organisasi — Portofolio Muhammad Affizar Ibrahim Alkautsar</title>
+  <meta name="description" content="Pengalaman organisasi Muhammad Affizar Ibrahim Alkautsar: Ketua OSIS SMKN 3 Jember 2 periode, Ketua Umum Forum OSIS SMK se-Kab. Jember, dan Ketua Umum Skaga Wonderfull.">
+  <meta name="keywords" content="Organisasi, Muhammad Affizar Ibrahim Alkautsar, Ketua OSIS, Forum OSIS SMK Jember, Skaga Wonderfull, Leadership, Public Speaking">
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Organisasi — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta property="og:description" content="Riwayat organisasi: Ketua OSIS 2 periode, Ketua Umum Forum OSIS SMK se-Kab. Jember, Ketua Umum Skaga Wonderfull.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <!--akhir section 1: SEO + Meta-->
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <!--awal section 2: JSON-LD-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Affizar Ibrahim Alkautsar",
+    "jobTitle": "Web Developer",
+    "knowsAbout": ["Leadership", "Public Speaking", "Team Coordination", "Event Management", "Multitasking"],
+    "description": "Memiliki pengalaman organisasi: Ketua OSIS 2 periode, Ketua Umum Forum OSIS SMK se-Kabupaten Jember, Ketua Umum Skaga Wonderfull."
+  }
+  </script>
+  <!--akhir section 2: JSON-LD-->
+
+  <!--awal section 3: CSS-->
+  <style>
+    :root{
+      --bg: #5a0f1d;
+      --bg-2:#3b0a13;
+      --text:#fff6dd;
+      --muted:#f0dfb0;
+      --line: rgba(255,246,221,.16);
+      --accent:#d4af37;
+      --accent-2:#ffd36a;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --soft-shadow: 0 14px 40px rgba(0,0,0,.08);
+      --gold-glow: 0 0 0 1px rgba(212,175,55,.25), 0 18px 44px rgba(212,175,55,.18);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x:hidden;
+      background:#f6f0e4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ text-decoration:none; }
+    .container, header, main, section, footer{ overflow-x: clip; }
+    .no-x{ overflow-x:hidden !important; }
+
+    /* NAV / BRAND */
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+      color: var(--text);
+      font-size: 20px;
+      white-space:nowrap;
+    }
+    .nav-link-custom{
+      color: rgba(255,246,221,.75);
+      font-weight:600;
+      font-size: 14px;
+      padding: .35rem .7rem !important;
+    }
+    .nav-link-custom:hover{ color: #fff; }
+    .btn-pill{
+      border-radius: 999px;
+      padding: .55rem 1.05rem;
+      font-weight:700;
+      font-size: 14px;
+      border: 1px solid transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      white-space:nowrap;
+    }
+    .btn-contact{
+      background: linear-gradient(180deg, var(--accent) 0%, #bf9830 100%);
+      color:#2a1a00;
+      border: 1px solid rgba(255,211,106,.35);
+      box-shadow: var(--gold-glow);
+    }
+    .btn-contact:hover{
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      color:#2a1a00;
+    }
+
+    /* HERO */
+    .hero-wrap{
+      position: relative;
+      background:
+        radial-gradient(1200px 420px at 65% 40%, rgba(255,246,221,.08), transparent 60%),
+        radial-gradient(900px 380px at 20% 10%, rgba(212,175,55,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      box-shadow: var(--shadow);
+      isolation:isolate;
+    }
+    .hero-wrap:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.9;
+      background-image:
+        radial-gradient(circle at 18% 32%, rgba(212,175,55,.95) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 54%, rgba(255,246,221,.70) 0 1px, transparent 2px),
+        radial-gradient(circle at 45% 26%, rgba(255,246,221,.50) 0 1px, transparent 2px),
+        radial-gradient(circle at 52% 44%, rgba(255,246,221,.28) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(212,175,55,.65) 0 1.5px, transparent 2.5px);
+      mix-blend-mode: screen;
+      z-index:0;
+    }
+    .hero-inner{ position:relative; z-index:1; padding: 20px 0 46px; }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:.45rem .75rem;
+      border-radius:999px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,246,221,.14);
+      color: rgba(255,246,221,.92);
+      font-size: 12px;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+    .page-title{
+      font-size: clamp(28px, 3.4vw, 44px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+      margin: 10px 0 10px;
+      max-width: 22ch;
+    }
+    .page-lead{
+      color: rgba(255,246,221,.78);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 78ch;
+      margin: 0;
+    }
+
+    .hero-side{
+      background: rgba(255,246,221,.06);
+      border: 1px solid rgba(255,246,221,.14);
+      border-radius: 22px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.20);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side:before{
+      content:"";
+      position:absolute;
+      inset:-80px -90px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.20), transparent 62%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
+    .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px; }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      background: rgba(212,175,55,.16);
+      border: 1px solid rgba(212,175,55,.45);
+      color:#4a3300;
+      font-weight:800;
+      font-size: 11px;
+      white-space:nowrap;
+    }
+    .hero-wave{
+      position:absolute; left:0; right:0; bottom:-1px;
+      width:100%; height: 78px;
+      z-index:1; pointer-events:none;
+    }
+    .hero-wave svg{ width:100%; height:100%; display:block; }
+
+    /* CONTENT */
+    .content-wrap{
+      background:#ffffff;
+      margin-top:-28px;
+      padding-top: 62px;
+      border-top-left-radius: 34px;
+      border-top-right-radius: 34px;
+      box-shadow: 0 -20px 60px rgba(0,0,0,.08);
+    }
+    .section-title{
+      font-weight: 800;
+      letter-spacing:-.2px;
+      color:#241012;
+      margin:0;
+    }
+    .section-sub{
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 72ch;
+      margin: 10px auto 0;
+    }
+
+    /* ORG CARDS */
+    .org-card{
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 18px;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+      padding: 18px;
+      height: 100%;
+      position: relative;
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .org-card:before{
+      content:"";
+      position:absolute;
+      inset:-40px -40px auto auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.18), transparent 60%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
+    .org-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 20px 52px rgba(0,0,0,.10);
+    }
+    .org-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .org-ic{
+      width: 54px; height: 54px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background: rgba(90,15,29,.06);
+      border: 1px solid rgba(212,175,55,.18);
+      color: var(--bg);
+      flex: 0 0 auto;
+    }
+    .badge-soft{
+      background: rgba(212,175,55,.20);
+      border: 1px solid rgba(212,175,55,.55);
+      color:#4a3300;
+      font-weight:800;
+      font-size: 11px;
+      border-radius: 999px;
+      padding: .35rem .6rem;
+      white-space:nowrap;
+      height: fit-content;
+    }
+    .org-card h5{
+      font-weight:800;
+      color:#241012;
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .org-card p{
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0 0 12px;
+    }
+    .org-list{
+      margin:0;
+      padding-left: 0;
+      list-style:none;
+      color:#6c5a5c;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+    .org-list li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .org-list i{ color: var(--bg); margin-top: 2px; }
+
+    /* TIMELINE */
+    .timeline{
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 22px;
+      background:
+        radial-gradient(900px 260px at 70% 0%, rgba(212,175,55,.14), transparent 60%),
+        linear-gradient(180deg, rgba(90,15,29,.06), rgba(90,15,29,.02));
+      box-shadow: var(--soft-shadow);
+      padding: 18px;
+    }
+    .t-item{
+      display:flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(90,15,29,.14);
+    }
+    .t-item:last-child{ border-bottom: 0; }
+    .t-dot{
+      width: 34px; height:34px;
+      border-radius: 999px;
+      display:grid; place-items:center;
+      background: rgba(212,175,55,.20);
+      border: 1px solid rgba(212,175,55,.55);
+      color:#4a3300;
+      font-weight:800;
+      flex: 0 0 auto;
+      box-shadow: 0 14px 30px rgba(212,175,55,.14);
+    }
+    .t-title{ font-weight:800; color:#241012; margin: 0; font-size: 14px; }
+    .t-sub{ color:#6c5a5c; font-size: 12.5px; margin: 4px 0 0; line-height: 1.6; }
+
+    /* FOOTER */
+    .footer{
+      background: linear-gradient(180deg, #3b0a13 0%, #2a070e 100%);
+      color: rgba(255,246,221,.82);
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+      box-shadow: 0 -16px 50px rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .footer:before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -120px auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.22), transparent 62%);
+      pointer-events:none;
+      transform: rotate(12deg);
+    }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
+
+    /* Scroll-to-top */
+    .to-top{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      border: 1px solid rgba(212,175,55,.25);
+      opacity:0;
+      transform: translateY(10px);
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 9999;
+    }
+    .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
+    .to-top:hover{ box-shadow: var(--gold-glow); color:#fff; }
+
+    @media (max-width: 575.98px){
+      .hero-wave{ height: 62px; }
+      .page-title{ max-width: none; }
+    }
+  </style>
+  <!--akhir section 3: CSS-->
+</head>
+
+<body class="no-x">
+  <!--awal section 4: HERO + NAVBAR-->
+  <header class="hero-wrap" id="top">
+    <div class="container hero-inner">
+      <nav class="navbar navbar-expand-lg navbar-dark py-2">
+        <a class="navbar-brand brand" href="index.html" aria-label="Portofolio Affizar">Affizar</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
+              <li class="nav-item"><a class="nav-link nav-link-custom" href="artikel.html">Artikel</a></li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-pill btn-contact" href="#contact">Kontak</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5 pt-3">
+        <div class="col-lg-7">
+          <span class="pill"><i class="bi bi-people"></i> Leadership Journey</span>
+          <h1 class="page-title">Pengalaman Organisasi</h1>
+          <p class="page-lead">
+            Leadership saya terbentuk dari pengalaman nyata memimpin organisasi sekolah dan forum lintas sekolah.
+            Saya terbiasa berkoordinasi, membuat program kerja, public speaking, dan tetap rapi saat multitasking.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-side">
+            <div class="fw-bold" style="font-weight:800;">Highlight</div>
+            <div style="color:rgba(255,246,221,.78);font-size:13px;line-height:1.65;margin-top:6px;">
+              Ketua OSIS 2 periode • Ketua Umum Forum OSIS SMK se-Kab. Jember • Ketua Umum Skaga Wonderfull
+            </div>
+            <div class="tag-row">
+              <span class="tag"><i class="bi bi-megaphone"></i> Public speaking</span>
+              <span class="tag"><i class="bi bi-diagram-3"></i> Koordinasi</span>
+              <span class="tag"><i class="bi bi-lightning"></i> Eksekusi</span>
+              <span class="tag"><i class="bi bi-layers"></i> Multitasking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <path fill="rgba(0,0,0,.10)" d="M0,72 C240,132 360,12 720,72 C1080,132 1200,12 1440,72 L1440,140 L0,140 Z"></path>
+        <path fill="#ffffff" d="M0,64 C240,124 360,4 720,64 C1080,124 1200,4 1440,64 L1440,140 L0,140 Z"></path>
+      </svg>
+    </div>
+  </header>
+  <!--akhir section 4: HERO + NAVBAR-->
+
+  <!--awal section 5: MAIN-->
+  <main class="content-wrap">
+    <!--awal section 6: ORG CARDS-->
+    <section class="container pb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Peran Utama</h2>
+        <p class="section-sub">Ringkasan peran organisasi yang paling membentuk kemampuan leadership & komunikasi saya.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="org-card">
+            <div class="org-head">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="org-ic"><i class="bi bi-flag fs-4"></i></div>
+                <div>
+                  <h5>Ketua OSIS</h5>
+                  <div style="color:#6c5a5c;font-size:12.5px;font-weight:700;">SMKN 3 Jember</div>
+                </div>
+              </div>
+              <span class="badge-soft">2 Periode</span>
+            </div>
+            <p>Memimpin program kerja OSIS, koordinasi tim, komunikasi lintas pihak, dan eksekusi kegiatan sekolah.</p>
+            <ul class="org-list">
+              <li><i class="bi bi-check2-circle"></i> Mengatur agenda & timeline kegiatan</li>
+              <li><i class="bi bi-check2-circle"></i> Koordinasi tim dan delegasi tugas</li>
+              <li><i class="bi bi-check2-circle"></i> Public speaking dalam forum sekolah</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="org-card">
+            <div class="org-head">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="org-ic"><i class="bi bi-diagram-3 fs-4"></i></div>
+                <div>
+                  <h5>Ketua Umum</h5>
+                  <div style="color:#6c5a5c;font-size:12.5px;font-weight:700;">Forum OSIS SMK se-Kab. Jember</div>
+                </div>
+              </div>
+              <span class="badge-soft">Lintas Sekolah</span>
+            </div>
+            <p>Memimpin koordinasi lintas sekolah, membangun kolaborasi, serta mengelola komunikasi dan agenda bersama.</p>
+            <ul class="org-list">
+              <li><i class="bi bi-check2-circle"></i> Diplomasi & komunikasi efektif</li>
+              <li><i class="bi bi-check2-circle"></i> Memimpin rapat & keputusan bersama</li>
+              <li><i class="bi bi-check2-circle"></i> Manajemen tim dalam tekanan</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="org-card">
+            <div class="org-head">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="org-ic"><i class="bi bi-award fs-4"></i></div>
+                <div>
+                  <h5>Ketua Umum</h5>
+                  <div style="color:#6c5a5c;font-size:12.5px;font-weight:700;">Supporter Skaga Wonderfull</div>
+                </div>
+              </div>
+              <span class="badge-soft">Ekstrakurikuler</span>
+            </div>
+            <p>Koordinasi komunitas supporter, membangun kekompakan anggota, serta memastikan kegiatan berjalan tertib.</p>
+            <ul class="org-list">
+              <li><i class="bi bi-check2-circle"></i> Manajemen kegiatan & anggota</li>
+              <li><i class="bi bi-check2-circle"></i> Menjaga solidaritas & teamwork</li>
+              <li><i class="bi bi-check2-circle"></i> Eksekusi cepat dan terstruktur</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--akhir section 6: ORG CARDS-->
+
+    <!--awal section 7: TIMELINE-->
+    <section class="container pb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Timeline Singkat</h2>
+        <p class="section-sub">Format ringkas yang mudah dipahami HR/klien. Kamu bisa isi tahun/bulan sesuai data aslinya.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-dot">1</div>
+          <div>
+            <p class="t-title">Ketua OSIS (Periode 1)</p>
+            <p class="t-sub">Fokus: membangun sistem kerja, komunikasi tim, dan eksekusi program kerja.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-dot">2</div>
+          <div>
+            <p class="t-title">Ketua OSIS (Periode 2)</p>
+            <p class="t-sub">Fokus: meningkatkan konsistensi kegiatan, koordinasi lintas bagian, dan penguatan leadership.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-dot">3</div>
+          <div>
+            <p class="t-title">Ketua Umum Forum OSIS SMK se-Kab. Jember</p>
+            <p class="t-sub">Fokus: kolaborasi lintas sekolah, diplomasi, koordinasi agenda, dan public speaking.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-dot">4</div>
+          <div>
+            <p class="t-title">Ketua Umum Supporter Skaga Wonderfull</p>
+            <p class="t-sub">Fokus: manajemen komunitas, teamwork, serta menjaga kegiatan berjalan tertib.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3"
+           style="border:1px solid rgba(90,15,29,.10);border-radius:22px;padding:18px;background:rgba(90,15,29,.03);">
+        <div>
+          <div style="font-weight:800;color:#241012;">Ingin kerja bareng?</div>
+          <div style="color:#6c5a5c;font-size:13px;line-height:1.6;">
+            Saya siap untuk proyek web (Bootstrap) dengan komunikasi yang jelas dan eksekusi yang rapi.
+          </div>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <a class="btn btn-pill btn-contact" href="index.html#contact">Kontak Saya</a>
+          <a class="btn btn-pill" style="background: rgba(90,15,29,.06); border:1px solid rgba(90,15,29,.10); color:#241012;" href="index.html#resources">
+            Lihat Proyek
+          </a>
+        </div>
+      </div>
+    </section>
+    <!--akhir section 7: TIMELINE-->
+  </main>
+  <!--akhir section 5: MAIN-->
+
+  <!--awal section 8: FOOTER-->
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="brand mb-2">Muhammad Affizar</div>
+          <p class="mb-3" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.75;max-width:56ch;">
+            Web Developer (Bootstrap) • Leadership • Public Speaking • Sosial • Multitasking.
+            Fresh graduate SMKN 3 Jember (RPL).
+          </p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#top" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a class="btn btn-sm btn-outline-light rounded-pill" href="index.html#contact" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Navigasi</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="about.html">Tentang</a>
+            <a href="keahlian.html">Keahlian</a>
+            <a href="index.html#resources">Proyek</a>
+            <a href="organisasi.html">Organisasi</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold mb-2">Highlight</div>
+          <div class="d-grid gap-2" style="font-size:13px;">
+            <a href="organisasi.html">Ketua OSIS (2 Periode)</a>
+            <a href="organisasi.html">Forum OSIS SMK Jember</a>
+            <a href="organisasi.html">Skaga Wonderfull</a>
+            <a href="index.html#contact">Kolaborasi</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="fw-bold mb-2">Newsletter</div>
+          <p class="mb-2" style="color:rgba(255,246,221,.72);font-size:13px;line-height:1.65;">
+            Jika mau update proyek terbaru, isi email di bawah.
+          </p>
+          <form class="d-flex gap-2" id="newsForm" novalidate>
+            <input class="form-control form-control-sm" type="email" placeholder="Email" required>
+            <button class="btn btn-sm btn-light rounded-pill fw-semibold" type="submit">Join</button>
+          </form>
+          <div class="small mt-2" id="newsMsg" style="color:rgba(255,246,221,.78)"></div>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,246,221,.18);">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2" style="font-size:12px;color:rgba(255,246,221,.72);">
+        <div>© <span id="year"></span> Muhammad Affizar Ibrahim Alkautsar. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="index.html#top">Privasi</a>
+          <a href="index.html#top">Syarat</a>
+          <a href="index.html#top">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--akhir section 8: FOOTER-->
+
+  <!-- Floating Scroll To Top -->
+  <a class="to-top" id="toTop" href="#top" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!--awal section 9: JS-->
+  <script>
+    (function () {
+      // year
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // to top
+      var toTop = document.getElementById('toTop');
+      function toggleToTop() {
+        if (!toTop) return;
+        if (window.scrollY > 380) toTop.classList.add('show');
+        else toTop.classList.remove('show');
+      }
+      toggleToTop();
+      window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // anti horizontal scroll
+      function clampOverflow() {
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+      }
+      clampOverflow();
+      window.addEventListener('resize', clampOverflow, { passive: true });
+
+      // newsletter
+      var newsForm = document.getElementById('newsForm');
+      var newsMsg = document.getElementById('newsMsg');
+      if (newsForm) {
+        newsForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = newsForm.querySelector('input[type="email"]');
+          var ok = email && email.value && email.checkValidity();
+          if (!newsMsg) return;
+          newsMsg.textContent = ok ? 'Mantap! Anda sudah terdaftar newsletter.' : 'Email tidak valid.';
+          if (ok) newsForm.reset();
+        });
+      }
+    })();
+  </script>
+  <!--akhir section 9: JS-->
+</body>
+</html>
