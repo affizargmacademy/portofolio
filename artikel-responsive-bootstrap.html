@@ -366,6 +366,41 @@
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
 
     @media (max-width: 991.98px){ .side-box{ position: static; } }
+
+    /* ===== TAMBAHAN: HERO MOBILE RAPI + CENTER (SAMA KAYA SEBELUMNYA) ===== */
+    @media (max-width: 575.98px){
+      .brand{ font-size:18px; }
+      .hero-wrap .navbar{ padding-top:.25rem !important; padding-bottom:.25rem !important; }
+      .hero-wrap .navbar-toggler{ padding:.25rem .45rem; }
+
+      .hero-inner{ padding: 14px 0 92px; }
+      .hero-wrap .row.pt-3{ padding-top: .4rem !important; }
+
+      .hero-wrap .col-lg-9{ text-align:center; }
+      .hero-wrap .pill{ justify-content:center; }
+      .hero-wrap .mt-3.meta-row{ justify-content:center; }
+
+      .hero-wrap .page-title,
+      .hero-wrap .page-lead{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .pill{ font-size:11px; padding:.42rem .68rem; }
+      .page-title{
+        font-size: 28px;
+        line-height: 1.12;
+        letter-spacing: -0.4px;
+        margin: 10px 0 8px;
+        max-width: 28ch;
+      }
+      .page-lead{
+        font-size: 13px;
+        line-height: 1.75;
+        max-width: 50ch;
+      }
+      .hero-wave{ height: 64px; }
+    }
   </style>
 </head>
 
@@ -382,7 +417,7 @@
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#resources">Proyek</a></li>
+            <!-- Proyek DIHAPUS sesuai perintah sebelumnya -->
             <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom active" aria-current="page" href="artikel.html">Artikel</a></li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
@@ -401,7 +436,7 @@
             Ini pola aman yang bisa kamu pakai untuk landing page/portofolio.
           </p>
           <div class="mt-3 meta-row">
-            <span><i class="bi bi-calendar3"></i> 2026</span>
+            <span><i class="bi bi-calendar3"></i> 24 Jan 2026</span>
             <span><i class="bi bi-person"></i> Muhammad Affizar</span>
             <span><i class="bi bi-folder2-open"></i> Bootstrap</span>
           </div>
@@ -438,6 +473,20 @@
                    alt="Foto Unsplash: UI website di laptop">
               <figcaption><b>Gambar Utama (Unsplash):</b> Breakpoint & grid yang rapi bikin tampilan tetap aman di HP sampai desktop.</figcaption>
             </figure>
+
+            <!-- TOC MOBILE: di bawah gambar utama -->
+            <div class="mx-3 mt-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
 
             <div class="article-content" id="articleContent">
               <p>
@@ -509,9 +558,7 @@
               </figure>
 
               <h2>4. Pola Aman yang Cepat Dipakai</h2>
-              <p>
-                Ini template mental yang sering aku pakai:
-              </p>
+              <p>Ini template mental yang sering aku pakai:</p>
               <h3>Template singkat</h3>
               <ul>
                 <li>Hero: 1 kolom (mobile) → 2 kolom (lg)</li>
@@ -533,11 +580,49 @@
               </ul>
 
               <h2>FAQ</h2>
-              <h3>Apakah harus pakai semua breakpoint?</h3>
-              <p>Tidak. Ambil yang benar-benar dipakai oleh layout kamu (biasanya md dan lg sudah cukup).</p>
+              <div class="accordion" id="faqAcc">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+                      Pakai breakpoint mana dulu, sm/md/lg?
+                    </button>
+                  </h3>
+                  <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      Mulai dari mobile-first: buat tampilan default untuk layar kecil, lalu naikkan dengan md dan lg sesuai kebutuhan.
+                      Jangan langsung desain untuk desktop lalu dipaksa turun.
+                    </div>
+                  </div>
+                </div>
 
-              <h3>Kenapa card kadang mepet ke pinggir?</h3>
-              <p>Pastikan konten utama berada di dalam <code>container</code> (atau set padding section yang benar).</p>
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                      Kenapa grid suka terlihat “ngepress” di mobile?
+                    </button>
+                  </h3>
+                  <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      Biasanya karena column dipaksa tetap 2-3 kolom di mobile. Gunakan col-12 untuk mobile,
+                      lalu col-md-6 atau col-lg-4 untuk layar lebih besar.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                      Container atau container-fluid?
+                    </button>
+                  </h3>
+                  <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      Pola aman: section boleh container-fluid untuk background full, tetapi isi konten tetap container
+                      supaya padding rapi dan tidak nabrak tepi.
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <h2>Kesimpulan</h2>
               <p>
@@ -562,16 +647,19 @@
 
           <!-- 3 Artikel Terkait -->
           <div class="mt-4">
-            <h2 class="fw-bold" style="font-weight:800;color:#241012;">Artikel Terkait</h2>
-            <p style="color:#6c5a5c;font-size:13px;line-height:1.7;">Rekomendasi bacaan lanjutan yang masih nyambung.</p>
-            <div class="row g-4">
+            <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+              <h2 class="m-0" style="font-weight:900;color:#241012;font-size:18px;">Artikel Terkait</h2>
+              <a href="artikel.html" class="btn btn-sm btn-outline-dark rounded-pill" style="font-weight:800;">Lihat Semua</a>
+            </div>
+
+            <div class="row g-3">
               <div class="col-md-4">
                 <div class="rel-card">
                   <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Unsplash: coding">
                   <div class="rel-body">
                     <div class="rel-title">Landing Page Bootstrap Rapi & Anti “Geser”</div>
                     <div class="rel-desc">Checklist cepat supaya halaman stabil, anti scroll horizontal.</div>
-                    <a class="btn btn-rel" href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                    <a class="btn btn-rel w-100" href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
@@ -582,7 +670,7 @@
                   <div class="rel-body">
                     <div class="rel-title">Komponen Bootstrap Wajib untuk Portofolio</div>
                     <div class="rel-desc">Navbar, hero, cards, badges, timeline, dan tips styling premium.</div>
-                    <a class="btn btn-rel" href="artikel-komponen-bootstrap-portfolio.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                    <a class="btn btn-rel w-100" href="artikel-komponen-bootstrap-portfolio.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
@@ -593,7 +681,7 @@
                   <div class="rel-body">
                     <div class="rel-title">UI Consistency: Skala Spacing & Komponen</div>
                     <div class="rel-desc">Framework kecil agar UI tetap konsisten dari desain ke implementasi.</div>
-                    <a class="btn btn-rel" href="artikel-ui-consistency.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                    <a class="btn btn-rel w-100" href="artikel-ui-consistency.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
@@ -681,35 +769,68 @@
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
 
-      // TOC build from H2/H3
+      // TOC build from H2/H3 (DESKTOP + MOBILE)
       var content = document.getElementById('articleContent');
       var tocList = document.getElementById('tocList');
+      var tocListM = document.getElementById('tocListM');
+
       function slugify(str){
         return (str||'').toLowerCase().trim()
           .replace(/[^\w\s-]/g,'')
           .replace(/\s+/g,'-')
           .replace(/-+/g,'-');
       }
+
+      function ensureUniqueId(base){
+        var id = base;
+        var n = 2;
+        while (document.getElementById(id)) { id = base + '-' + n; n++; }
+        return id;
+      }
+
       function buildTOC(){
-        if (!content || !tocList) return;
-        tocList.innerHTML = '';
+        if (!content) return;
+
+        if (tocList) tocList.innerHTML = '';
+        if (tocListM) tocListM.innerHTML = '';
+
         var headings = content.querySelectorAll('h2, h3');
-        headings.forEach(function(h){
-          if(!h.id){
-            h.id = slugify(h.textContent);
+        if (!headings.length){
+          if (tocList) tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocListM) tocListM.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          return;
+        }
+
+        function addItem(list, h){
+          if (!list) return;
+
+          var text = (h.textContent || '').trim();
+          if (!text) return;
+
+          if (!h.id){
+            var base = slugify(text);
+            h.id = ensureUniqueId(base || 'section');
           }
+
           var li = document.createElement('li');
-          if (h.tagName.toLowerCase() === 'h3') li.style.marginLeft = '10px';
+          li.style.marginLeft = (h.tagName.toLowerCase() === 'h3') ? '14px' : '0';
+
           var a = document.createElement('a');
           a.href = '#' + h.id;
-          a.textContent = h.textContent;
+          a.textContent = text;
+
           li.appendChild(a);
-          tocList.appendChild(li);
+          list.appendChild(li);
+        }
+
+        headings.forEach(function(h){
+          addItem(tocList, h);
+          addItem(tocListM, h);
         });
       }
       buildTOC();
 
-      // TOC toggle
+      // TOC toggle (Desktop)
       var tocToggle = document.getElementById('tocToggle');
       var tocBody = document.getElementById('tocBody');
       function setToc(open){
@@ -723,6 +844,18 @@
         });
         tocToggle.addEventListener('keydown', function(e){
           if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocToggle.click(); }
+        });
+      }
+
+      // TOC toggle (Mobile)
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
         });
       }
 

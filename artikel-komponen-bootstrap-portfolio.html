@@ -168,10 +168,19 @@
       max-width:86ch;
       margin:0;
     }
-    .meta-row{ display:flex; gap:12px; flex-wrap:wrap; color:rgba(255,246,221,.78); font-size:12px; align-items:center; }
+    .meta-row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      color:rgba(255,246,221,.78);
+      font-size:12px;
+      align-items:center;
+    }
     .meta-row i{ color: var(--accent-2); }
 
-    .hero-wave{ position:absolute; left:0; right:0; bottom:-1px; width:100%; height:78px; z-index:1; pointer-events:none; }
+    .hero-wave{
+      position:absolute; left:0; right:0; bottom:-1px;
+      width:100%; height:78px;
+      z-index:1; pointer-events:none;
+    }
     .hero-wave svg{ width:100%; height:100%; display:block; }
 
     /* CONTENT */
@@ -396,6 +405,71 @@
     }
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
 
+    /* =======================
+       PERAPIHAN HERO MOBILE
+       (HANYA HERO)
+       ======================= */
+       @media (max-width: 575.98px){
+  /* brand + spacing navbar */
+  .brand{ font-size:18px; }
+  .hero-wrap .navbar{ padding-top:.25rem !important; padding-bottom:.25rem !important; }
+  .hero-wrap .navbar-toggler{ padding:.25rem .45rem; }
+
+  /* kunci: kasih ruang aman sebelum wave */
+  .hero-inner{
+    padding: 14px 0 92px;   /* aman dari wave */
+  }
+
+  /* kurangi padding top dari row (pt-3 bawaan bootstrap) khusus hero */
+  .hero-wrap .row.pt-3{ padding-top: .4rem !important; }
+
+  /* ====== INI YANG BARU: CENTER DI MOBILE ====== */
+  .hero-wrap .col-lg-8{
+    text-align:center;
+  }
+  .hero-wrap .pill{
+    justify-content:center;
+  }
+  .hero-wrap .meta-row{
+    justify-content:center;   /* meta icon+text center */
+  }
+  .hero-wrap .page-title,
+  .hero-wrap .page-lead{
+    margin-left:auto;
+    margin-right:auto;        /* biar max-width tetap center */
+  }
+
+  .pill{
+    font-size:11px;
+    padding:.42rem .68rem;
+  }
+
+  .page-title{
+    font-size: 28px;
+    line-height: 1.12;
+    letter-spacing: -0.4px;
+    margin: 10px 0 8px;
+    max-width: 26ch;
+  }
+
+  .page-lead{
+    font-size: 13px;
+    line-height: 1.75;
+    max-width: 48ch;
+  }
+
+  .meta-row{
+    gap: 8px 12px;
+    line-height: 1.4;
+    margin-top: 12px;
+  }
+
+  .hero-wave{
+    height: 64px;
+  }
+}
+
+
     @media (max-width: 991.98px){
       .side-box{ position: static; }
     }
@@ -418,7 +492,6 @@
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#resources">Proyek</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom active" aria-current="page" href="artikel.html">Artikel</a></li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
@@ -475,6 +548,20 @@
                    alt="Foto Unsplash: coding dan setup web">
               <figcaption><b>Gambar Utama (Unsplash):</b> Portofolio yang “enak dilihat” biasanya menang di struktur komponen + konsistensi.</figcaption>
             </figure>
+
+            <!-- TOC MOBILE (DI BAWAH GAMBAR UTAMA) -->
+            <div class="px-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
 
             <div class="article-content" id="articleContent">
               <p>
@@ -775,9 +862,10 @@
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
 
-      // TOC H2/H3
+      // TOC H2/H3 (SIDEBAR + MOBILE)
       var article = document.getElementById('articleContent');
       var tocList = document.getElementById('tocList');
+      var tocListM = document.getElementById('tocListM');
 
       function slugify(txt){
         return (txt || '')
@@ -788,13 +876,13 @@
           .replace(/-+/g,'-');
       }
 
-      function buildTOC(){
-        if (!article || !tocList) return;
-        tocList.innerHTML = '';
+      function buildTOC(listEl){
+        if (!article || !listEl) return;
+        listEl.innerHTML = '';
 
         var heads = article.querySelectorAll('h2, h3');
         if (!heads.length){
-          tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          listEl.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
           return;
         }
 
@@ -818,12 +906,14 @@
           a.textContent = text;
 
           li.appendChild(a);
-          tocList.appendChild(li);
+          listEl.appendChild(li);
         });
       }
-      buildTOC();
 
-      // Toggle TOC
+      buildTOC(tocList);
+      buildTOC(tocListM);
+
+      // Toggle TOC (SIDEBAR)
       var tocToggle = document.getElementById('tocToggle');
       var tocBody = document.getElementById('tocBody');
       var tocIcon = document.getElementById('tocIcon');
@@ -832,6 +922,18 @@
           var isOpen = tocBody.classList.toggle('show');
           tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           if (tocIcon) tocIcon.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      // Toggle TOC (MOBILE)
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
         });
       }
 

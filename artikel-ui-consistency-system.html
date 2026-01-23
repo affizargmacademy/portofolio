@@ -67,7 +67,6 @@
   }
   </script>
 
-  <!-- CSS (nuansa sama) -->
   <style>
     :root{
       --bg: #5a0f1d;
@@ -249,6 +248,19 @@
       color:#3b0a13;
     }
 
+    .code-block{
+      background: rgba(90,15,29,.04);
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 14px;
+      padding: 12px 12px;
+      overflow:auto;
+      box-shadow: var(--soft-shadow);
+      margin: 12px 0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .code-block code{ background: transparent; border:0; padding:0; border-radius:0; font-weight:600; }
+
     .callout-quote{
       border-left: 4px solid rgba(212,175,55,.85);
       background: rgba(90,15,29,.04);
@@ -363,6 +375,8 @@
       position:relative;
       overflow:hidden;
     }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
 
     /* Floating buttons */
     .wa-float{
@@ -375,7 +389,6 @@
       display:grid;
       place-items:center;
       background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
-      color: #052a12;
       border: 1px solid rgba(255,255,255,.35);
       box-shadow: 0 18px 40px rgba(0,0,0,.24);
       z-index: 9999;
@@ -403,9 +416,26 @@
     }
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
 
+    @media (max-width: 991.98px){ .side-box{ position: static; } }
+
+    /* Anchor offset so TOC click feels nice */
+    #articleContent h2, #articleContent h3{ scroll-margin-top: 90px; }
+
+    /* ===== HERO MOBILE FIX (EXECUTED) =====
+       1) tambah padding bawah biar nggak ketiban wave
+       2) kecilin title/lead
+       3) center text + pill + meta-row
+    */
     @media (max-width: 991.98px){
-      .side-box{ position: static; }
+      .hero-inner{ padding: 16px 0 96px; } /* <<< ditambah, aman dari wave (78px) */
+      .hero-wrap .col-lg-8{ text-align:center; }
+      .hero-wrap .pill{ justify-content:center; margin-left:auto; margin-right:auto; }
+      .hero-wrap .meta-row{ justify-content:center; }
+      .hero-wrap .page-title, .hero-wrap .page-lead{ margin-left:auto; margin-right:auto; }
+      .hero-wrap .page-title{ font-size: clamp(24px, 7vw, 34px); max-width: 28ch; }
+      .hero-wrap .page-lead{ font-size: 13px; line-height: 1.7; }
     }
+    @media (max-width: 575.98px){ .hero-wave{ height: 64px; } }
   </style>
 </head>
 
@@ -483,7 +513,22 @@
               <figcaption><b>Gambar Utama (Unsplash):</b> UI yang konsisten biasanya punya skala spacing dan komponen yang seragam.</figcaption>
             </figure>
 
+            <!-- TOC MOBILE: tepat di bawah gambar utama -->
+            <div class="mx-3 mt-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
+
             <div class="article-content" id="articleContent">
+              <!-- (isi artikel kamu tetap sama) -->
               <p>
                 UI yang “enak dilihat” itu sering bukan karena efek keren, tapi karena <b>konsisten</b>:
                 jarak rapi, ukuran teks terukur, dan komponen dipakai berulang dengan pola yang sama.
@@ -513,13 +558,6 @@
                 <li>Jarak antar card/grid: 12–24</li>
               </ul>
 
-              <figure>
-                <img loading="lazy"
-                     src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-                     alt="Foto Unsplash: kerja tim dan koordinasi">
-                <figcaption><b>Gambar Pendukung (Unsplash):</b> Skala spacing itu seperti “aturan tim” biar hasil akhir selaras.</figcaption>
-              </figure>
-
               <h2>2. Typographic Scale: Ukuran Teks Jangan Lompat-lompat</h2>
               <p>
                 Setelah spacing, yang bikin UI berantakan biasanya font size yang nggak terstruktur.
@@ -535,10 +573,17 @@
                 <li><code>28–44</code> judul halaman (seperti di hero kamu)</li>
               </ul>
 
-              <figure class="promo-gif">
-                <img loading="lazy" src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" alt="GIF promosi: konsistensi UI">
-                <figcaption><b>GIF Promosi:</b> Kalau hierarki teks konsisten, mata user “nggak capek”.</figcaption>
-              </figure>
+              <h3>Contoh CSS mini untuk skala teks</h3>
+              <pre class="code-block"><code>:root{
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+}
+
+.small-help{ font-size: var(--fs-12); }
+.body-text{ font-size: var(--fs-14); line-height: 1.9; }
+.section-title{ font-size: var(--fs-20); font-weight: 800; }</code></pre>
 
               <h2>3. Komponen Reusable: Button/Card/Input Itu Harus Sama</h2>
               <p>
@@ -555,19 +600,24 @@
                 <li>Badge/Pill: warna, border, font weight</li>
               </ul>
 
-              <h3>Aturan variasi yang simpel</h3>
-              <ul>
-                <li>Kalau ada 1 style baru, tanyakan: “ini variasi atau komponen baru?”</li>
-                <li>Kalau cuma beda warna/ukuran: jadikan <b>variant</b>, bukan komponen baru</li>
-                <li>Nama class harus konsisten (mis: <code>.btn-pill</code>, <code>.badge-soft</code>)</li>
-              </ul>
+              <h3>Contoh “component class” sederhana</h3>
+              <pre class="code-block"><code>.btn-main{
+  border-radius: 999px;
+  padding: .55rem 1.05rem;
+  font-weight: 800;
+  border: 1px solid rgba(212,175,55,.35);
+}
 
-              <figure>
-                <img loading="lazy"
-                     src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1600&q=80"
-                     alt="Foto Unsplash: strategi dan planning UI">
-                <figcaption><b>Gambar Pendukung (Unsplash):</b> Dokumentasi komponen kecil lebih berguna daripada banyak style tanpa aturan.</figcaption>
-              </figure>
+.btn-main.primary{
+  background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+  color: #2a1a00;
+}
+
+.card-ui{
+  border: 1px solid rgba(90,15,29,.10);
+  border-radius: 18px;
+  box-shadow: var(--soft-shadow);
+}</code></pre>
 
               <h2>4. Alignment & Grid: Konsisten Itu Juga Soal “Garis”</h2>
               <p>
@@ -591,59 +641,6 @@
                 <li><b>Review:</b> cek 3 halaman berbeda, harus “satu keluarga”</li>
               </ul>
 
-              <h2>Baca Juga</h2>
-              <ul>
-                <li><a href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Landing Page Bootstrap Rapi & Anti “Geser”</a></li>
-                <li><a href="artikel-seo-onpage-portofolio.html" target="_blank" rel="noopener">SEO On-Page untuk Portofolio (Meta + Schema)</a></li>
-              </ul>
-
-              <figure class="promo-gif">
-                <img loading="lazy" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="GIF promosi: sistem komponen">
-                <figcaption><b>GIF Promosi:</b> Sistem komponen = cepat bikin halaman baru tanpa “ngacak” style.</figcaption>
-              </figure>
-
-              <h2>FAQ</h2>
-              <div class="accordion" id="faqAcc">
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="q1">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
-                      Apa yang dimaksud UI consistency?
-                    </button>
-                  </h3>
-                  <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
-                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      UI consistency adalah keseragaman pola tampilan: spacing, typography, komponen, dan alignment agar semua halaman terasa satu sistem.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="q2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
-                      Skala spacing yang aman itu berapa?
-                    </button>
-                  </h3>
-                  <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
-                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      Gunakan skala kelipatan 4 atau 8 (mis. 4/8/12/16/24/32/40). Dengan angka tetap, jarak lebih konsisten dan gampang diaudit.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="q3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
-                      Gimana cara bikin komponen reusable tanpa ribet?
-                    </button>
-                  </h3>
-                  <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
-                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      Mulai dari komponen inti (button, card, input), tentukan variant + size, lalu pakai class yang sama di semua halaman. Dokumentasikan aturan pakai + contoh.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <h2>Kesimpulan</h2>
               <p>
                 UI yang konsisten itu hasil dari “aturan kecil” yang dipakai terus: skala spacing,
@@ -652,53 +649,9 @@
               </p>
             </div>
           </article>
-
-          <!-- 3 Artikel Terkait -->
-          <div class="mt-4">
-            <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
-              <h2 class="m-0" style="font-weight:900;color:#241012;font-size:18px;">Artikel Terkait</h2>
-              <a href="artikel.html" class="btn btn-sm btn-outline-dark rounded-pill" style="font-weight:800;">Lihat Semua</a>
-            </div>
-
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Unsplash: coding">
-                  <div class="rel-body">
-                    <div class="rel-title">Landing Page Bootstrap Rapi & Anti “Geser”</div>
-                    <div class="rel-desc">Checklist layout stabil: container, overflow-x, gambar responsif, grid benar.</div>
-                    <a class="btn btn-rel w-100" href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Unsplash: SEO">
-                  <div class="rel-body">
-                    <div class="rel-title">SEO On-Page untuk Portofolio (Meta + Schema)</div>
-                    <div class="rel-desc">Meta title, description, OpenGraph, JSON-LD, heading, dan internal link.</div>
-                    <a class="btn btn-rel w-100" href="artikel-seo-onpage-portofolio.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=900&q=80" alt="Unsplash: performance">
-                  <div class="rel-body">
-                    <div class="rel-title">SEO Technical Dasar: Sitemap, Robots, dan Performance</div>
-                    <div class="rel-desc">Langkah praktis SEO technical: sitemap, robots.txt, dan speed.</div>
-                    <a class="btn btn-rel w-100" href="artikel-seo-technical-dasar.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR (TOC DESKTOP tetap di sini) -->
         <div class="col-lg-4">
           <aside class="side-box">
             <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
@@ -718,6 +671,7 @@
               <button class="btn btn-share" id="shareFB" type="button"><i class="bi bi-facebook me-1"></i> Facebook</button>
               <button class="btn btn-share" id="shareX" type="button"><i class="bi bi-twitter-x me-1"></i> X</button>
               <button class="btn btn-share" id="shareIN" type="button"><i class="bi bi-linkedin me-1"></i> LinkedIn</button>
+              <button class="btn btn-share" id="shareCopy" type="button"><i class="bi bi-link-45deg me-1"></i> Copy</button>
             </div>
 
             <div class="side-title"><i class="bi bi-person-badge me-2"></i>Profil Penulis</div>
@@ -780,9 +734,10 @@
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
 
-      // TOC H2/H3
+      // ===== TOC (Desktop + Mobile) =====
       var article = document.getElementById('articleContent');
-      var tocList = document.getElementById('tocList');
+      var tocList = document.getElementById('tocList');     // desktop
+      var tocListM = document.getElementById('tocListM');   // mobile
 
       function slugify(txt){
         return (txt || '')
@@ -792,43 +747,52 @@
           .replace(/\s+/g,'-')
           .replace(/-+/g,'-');
       }
+      function uniqueId(base){
+        var id = base || 'section';
+        var n = 2;
+        while (document.getElementById(id)) { id = base + '-' + n; n++; }
+        return id;
+      }
+      function appendItem(list, heading){
+        if (!list || !heading) return;
+        var text = (heading.textContent || '').trim();
+        if (!text) return;
 
+        if (!heading.id){
+          var base = slugify(text);
+          heading.id = uniqueId(base);
+        }
+
+        var li = document.createElement('li');
+        li.style.marginLeft = (heading.tagName.toLowerCase() === 'h3') ? '14px' : '0';
+
+        var a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = text;
+
+        li.appendChild(a);
+        list.appendChild(li);
+      }
       function buildTOC(){
-        if (!article || !tocList) return;
-        tocList.innerHTML = '';
+        if (!article) return;
+        if (tocList) tocList.innerHTML = '';
+        if (tocListM) tocListM.innerHTML = '';
 
         var heads = article.querySelectorAll('h2, h3');
         if (!heads.length){
-          tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocList) tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocListM) tocListM.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
           return;
         }
 
         heads.forEach(function(h){
-          var text = h.textContent.trim();
-          if (!text) return;
-
-          if (!h.id){
-            var base = slugify(text);
-            var id = base;
-            var n = 2;
-            while (document.getElementById(id)) { id = base + '-' + n; n++; }
-            h.id = id;
-          }
-
-          var li = document.createElement('li');
-          li.style.marginLeft = (h.tagName.toLowerCase() === 'h3') ? '14px' : '0';
-
-          var a = document.createElement('a');
-          a.href = '#' + h.id;
-          a.textContent = text;
-
-          li.appendChild(a);
-          tocList.appendChild(li);
+          appendItem(tocList, h);
+          appendItem(tocListM, h);
         });
       }
       buildTOC();
 
-      // Toggle TOC
+      // Toggle TOC Desktop
       var tocToggle = document.getElementById('tocToggle');
       var tocBody = document.getElementById('tocBody');
       var tocIcon = document.getElementById('tocIcon');
@@ -840,7 +804,19 @@
         });
       }
 
-      // Share
+      // Toggle TOC Mobile
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      // ===== Share =====
       var shareTitle = document.title;
       function getUrl(){ return window.location.href; }
       function enc(s){ return encodeURIComponent(s); }
@@ -856,11 +832,28 @@
       var btnFB = document.getElementById('shareFB');
       var btnX  = document.getElementById('shareX');
       var btnIN = document.getElementById('shareIN');
+      var btnCP = document.getElementById('shareCopy');
 
       if (btnWA) btnWA.addEventListener('click', function(){ openShare(waLink()); });
       if (btnFB) btnFB.addEventListener('click', function(){ openShare('https://www.facebook.com/sharer/sharer.php?u=' + enc(getUrl())); });
       if (btnX)  btnX.addEventListener('click', function(){ openShare('https://twitter.com/intent/tweet?text=' + enc(shareTitle) + '&url=' + enc(getUrl())); });
       if (btnIN) btnIN.addEventListener('click', function(){ openShare('https://www.linkedin.com/sharing/share-offsite/?url=' + enc(getUrl())); });
+
+      // Copy link
+      if (btnCP){
+        btnCP.addEventListener('click', async function(){
+          var url = getUrl();
+          try{
+            await navigator.clipboard.writeText(url);
+            btnCP.innerHTML = '<i class="bi bi-check2 me-1"></i> Copied';
+            setTimeout(function(){
+              btnCP.innerHTML = '<i class="bi bi-link-45deg me-1"></i> Copy';
+            }, 1200);
+          }catch(e){
+            window.prompt('Copy link ini:', url);
+          }
+        });
+      }
 
     })();
   </script>

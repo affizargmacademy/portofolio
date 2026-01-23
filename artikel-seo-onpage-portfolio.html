@@ -5,18 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Responsive Bootstrap: Breakpoint, Grid, dan Pola Aman — Muhammad Affizar</title>
-  <meta name="description" content="Panduan responsive Bootstrap: memahami breakpoint, memakai grid dengan benar, container vs container-fluid, gambar responsif, dan pola aman agar layout tidak geser di HP. Plus TOC & FAQ.">
-  <meta name="keywords" content="bootstrap responsive, breakpoint bootstrap, grid bootstrap, container, container-fluid, layout hp, overflow-x, bootstrap 5">
+  <title>SEO On-Page untuk Portofolio: Meta, Heading, dan Internal Link — Muhammad Affizar</title>
+  <meta name="description" content="Panduan SEO on-page untuk portofolio: meta title/description, heading H1–H3, internal link, alt gambar, schema FAQ, dan checklist cepat agar halaman rapi, mudah dipahami, dan SEO-friendly.">
+  <meta name="keywords" content="SEO on-page, meta title, meta description, heading, internal link, alt text, schema faq, seo portofolio, open graph">
   <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
   <meta name="robots" content="index,follow">
 
+  <!-- Canonical (sesuaikan URL saat deploy) -->
+  <link rel="canonical" href="https://domainkamu.com/artikel-seo-onpage-portofolio.html">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Responsive Bootstrap: Breakpoint, Grid, dan Pola Aman — Muhammad Affizar">
-  <meta property="og:description" content="Cara memilih breakpoint, menyusun grid, dan menghindari layout aneh di HP dengan pola aman Bootstrap.">
+  <meta property="og:title" content="SEO On-Page untuk Portofolio: Meta, Heading, dan Internal Link — Muhammad Affizar">
+  <meta property="og:description" content="Langkah praktis on-page: meta title/description, heading rapi, internal link, alt gambar, dan schema agar portofolio lebih mudah ditemukan.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="id_ID">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Bootstrap + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -32,11 +35,11 @@
   {
     "@context":"https://schema.org",
     "@type":"BlogPosting",
-    "headline":"Responsive Bootstrap: Breakpoint, Grid, dan Pola Aman",
-    "description":"Panduan responsive Bootstrap: memahami breakpoint, memakai grid dengan benar, container vs container-fluid, gambar responsif, dan pola aman agar layout tidak geser di HP.",
+    "headline":"SEO On-Page untuk Portofolio: Meta, Heading, dan Internal Link",
+    "description":"Panduan SEO on-page untuk portofolio: meta title/description, heading H1–H3, internal link, alt gambar, schema FAQ, dan checklist cepat agar halaman rapi, mudah dipahami, dan SEO-friendly.",
     "inLanguage":"id-ID",
     "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"},
-    "image":"https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80",
+    "image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80",
     "datePublished":"2026-01-24",
     "dateModified":"2026-01-24"
   }
@@ -50,18 +53,18 @@
     "mainEntity":[
       {
         "@type":"Question",
-        "name":"Apa bedanya container dan container-fluid di Bootstrap?",
-        "acceptedAnswer":{"@type":"Answer","text":"container punya lebar maksimum yang berubah per breakpoint, sedangkan container-fluid full width (100%) di semua ukuran layar. Gunakan container untuk layout aman dan rapi, gunakan container-fluid jika memang ingin lebar penuh."}
+        "name":"Apa bedanya SEO on-page dan technical?",
+        "acceptedAnswer":{"@type":"Answer","text":"On-page fokus pada konten dan struktur di halaman (judul, deskripsi, heading, internal link, alt gambar, schema). Technical fokus pada crawl/indexing dan performa (sitemap, robots, Core Web Vitals, caching)."}
       },
       {
         "@type":"Question",
-        "name":"Kenapa layout sering 'geser' ke kanan di HP?",
-        "acceptedAnswer":{"@type":"Answer","text":"Biasanya karena ada elemen melebar melebihi viewport: gambar tanpa img-fluid, lebar fixed (px) terlalu besar, row tanpa container, atau overflow-x dari komponen tertentu. Periksa elemen terlebar dan pastikan grid/overflow rapih."}
+        "name":"Meta description pengaruh ranking?",
+        "acceptedAnswer":{"@type":"Answer","text":"Meta description biasanya tidak jadi faktor ranking langsung, tapi sangat mempengaruhi CTR (klik) di hasil pencarian. CTR yang bagus membantu sinyal performa halaman."}
       },
       {
         "@type":"Question",
-        "name":"Breakpoint Bootstrap yang paling sering dipakai untuk HP itu apa?",
-        "acceptedAnswer":{"@type":"Answer","text":"Umumnya mulai dari mobile-first (tanpa prefix), lalu naik ke sm (≥576px) dan md (≥768px). Banyak layout cukup diatur dari base + md untuk tampilan tablet/desktop."}
+        "name":"Berapa heading yang ideal?",
+        "acceptedAnswer":{"@type":"Answer","text":"Gunakan 1 H1 untuk judul utama. Pecah konten dengan H2 untuk bagian besar, dan H3 untuk subbagian. Prioritaskan struktur yang jelas dan mudah dibaca."}
       }
     ]
   }
@@ -159,7 +162,7 @@
       line-height:1.1;
       letter-spacing:-0.6px;
       margin:10px 0 10px;
-      max-width:48ch;
+      max-width:52ch;
     }
     .page-lead{
       color:rgba(255,246,221,.78);
@@ -248,6 +251,19 @@
       font-weight: 700;
       color:#3b0a13;
     }
+    /* block code */
+    .code-block{
+      background: rgba(90,15,29,.04);
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 14px;
+      padding: 12px 12px;
+      overflow:auto;
+      box-shadow: var(--soft-shadow);
+      margin: 12px 0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .code-block code{ background: transparent; border:0; padding:0; border-radius:0; font-weight:600; }
 
     .callout-quote{
       border-left: 4px solid rgba(212,175,55,.85);
@@ -363,6 +379,8 @@
       position:relative;
       overflow:hidden;
     }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
 
     /* Floating buttons */
     .wa-float{
@@ -375,7 +393,6 @@
       display:grid;
       place-items:center;
       background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
-      color: #052a12;
       border: 1px solid rgba(255,255,255,.35);
       box-shadow: 0 18px 40px rgba(0,0,0,.24);
       z-index: 9999;
@@ -403,9 +420,22 @@
     }
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
 
+    @media (max-width: 991.98px){ .side-box{ position: static; } }
+
+    /* Anchor offset biar TOC gak ketutup header */
+    #articleContent h2, #articleContent h3{ scroll-margin-top: 90px; }
+
+    /* Hero mobile fix (biar aman wave + lebih enak dibaca) */
     @media (max-width: 991.98px){
-      .side-box{ position: static; }
+      .hero-inner{ padding: 16px 0 86px; }
+      .hero-wrap .col-lg-8{ text-align:center; }
+      .hero-wrap .pill{ justify-content:center; margin-left:auto; margin-right:auto; }
+      .hero-wrap .meta-row{ justify-content:center; }
+      .hero-wrap .page-title, .hero-wrap .page-lead{ margin-left:auto; margin-right:auto; }
+      .hero-wrap .page-title{ font-size: clamp(24px, 7vw, 34px); max-width: 28ch; }
+      .hero-wrap .page-lead{ font-size: 13px; line-height: 1.7; }
     }
+    @media (max-width: 575.98px){ .hero-wave{ height: 64px; } }
   </style>
 </head>
 
@@ -437,16 +467,16 @@
 
       <div class="row align-items-center g-4 g-lg-5 pt-3">
         <div class="col-lg-8">
-          <span class="pill"><i class="bi bi-bootstrap"></i> Bootstrap • 6 menit</span>
-          <h1 class="page-title">Responsive Bootstrap: Breakpoint, Grid, dan Pola Aman</h1>
+          <span class="pill"><i class="bi bi-search"></i> SEO • 6 menit</span>
+          <h1 class="page-title">SEO On-Page untuk Portofolio: Meta, Heading, dan Internal Link</h1>
           <p class="page-lead">
-            Cara memilih breakpoint, menyusun grid, dan menghindari layout aneh di HP.
-            Fokus ke pola aman: <b>container</b>, <b>row/col</b>, <b>img-fluid</b>, dan anti <b>overflow-x</b>.
+            Cara bikin halaman portofolio kamu lebih <b>mudah dipahami mesin pencari</b> dan <b>lebih menarik diklik</b>:
+            dari meta, struktur heading, sampai internal link dan schema.
           </p>
           <div class="mt-3 meta-row">
             <span><i class="bi bi-calendar3"></i> 24 Jan 2026</span>
             <span><i class="bi bi-person"></i> Muhammad Affizar</span>
-            <span><i class="bi bi-folder2-open"></i> Bootstrap</span>
+            <span><i class="bi bi-folder2-open"></i> SEO On-Page</span>
           </div>
         </div>
       </div>
@@ -469,120 +499,159 @@
           <article class="article-card">
             <div class="article-body">
               <div class="d-flex flex-wrap gap-2 align-items-center">
-                <span class="badge-soft"><i class="bi bi-bootstrap me-1"></i> Bootstrap</span>
+                <span class="badge-soft"><i class="bi bi-search me-1"></i> SEO</span>
                 <span class="badge-soft"><i class="bi bi-clock me-1"></i> 6 menit baca</span>
-                <span class="badge-soft"><i class="bi bi-grid-3x3-gap me-1"></i> Breakpoint + Grid</span>
+                <span class="badge-soft"><i class="bi bi-ui-checks me-1"></i> On-Page</span>
               </div>
             </div>
 
             <!-- Gambar utama -->
             <figure class="mx-3 mt-0">
               <img loading="lazy"
-                   src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80"
-                   alt="Foto Unsplash: coding untuk ilustrasi layout responsive Bootstrap">
-              <figcaption><b>Gambar Utama (Unsplash):</b> Layout responsive yang rapi biasanya dimulai dari grid dan breakpoint yang benar.</figcaption>
+                   src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+                   alt="Foto Unsplash: kode untuk ilustrasi SEO on-page">
+              <figcaption><b>Gambar Utama (Unsplash):</b> On-page SEO itu rapiin sinyal di dalam halaman: title, description, heading, dan link.</figcaption>
             </figure>
+
+            <!-- TOC MOBILE -->
+            <div class="mx-3 mt-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
 
             <div class="article-content" id="articleContent">
               <p>
-                Bootstrap itu enak karena cepat, tapi banyak kasus “kok di HP jadi geser?”
-                atau “grid-nya kacau pas tablet.” Biasanya penyebabnya bukan Bootstrap-nya,
-                tapi pola pakai grid dan breakpoint yang belum konsisten.
+                SEO on-page itu bukan “trik”, tapi cara bikin halaman kamu jelas.
+                Mesin pencari butuh sinyal: halaman ini tentang apa, bagian mana yang penting,
+                dan ke halaman mana harus diarahkan. Kalau rapi, peluang naik ranking dan CTR ikut naik.
               </p>
 
               <div class="callout-quote" role="note" aria-label="Kutipan">
-                <p>“Responsive itu bukan bikin semuanya kecil — tapi bikin layout tetap enak dibaca di tiap ukuran layar.”</p>
+                <p>“On-page itu membuat halaman mudah dipahami: untuk user dan untuk mesin.”</p>
               </div>
 
-              <h2>1. Pahami Breakpoint Bootstrap (Mobile-First)</h2>
+              <h2>1. Meta Title: Judul yang Menjual + Relevan</h2>
               <p>
-                Bootstrap itu <b>mobile-first</b>: style tanpa prefix berlaku untuk layar kecil dulu, lalu kita tambah aturan di ukuran lebih besar.
-                Breakpoint umum: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code>.
+                Meta title muncul di tab browser dan hasil pencarian. Buat yang singkat, jelas, dan ada kata kunci utama.
+                Untuk portofolio, tambahkan konteks (mis. “Portofolio Web Developer”) atau nama.
               </p>
 
-              <h3>Tips cepat memilih breakpoint</h3>
+              <h3>Contoh meta title yang aman</h3>
+              <pre class="code-block"><code>&lt;title&gt;Portofolio Web Developer Bootstrap — Muhammad Affizar&lt;/title&gt;</code></pre>
+
+              <h3>Tips cepat</h3>
               <ul>
-                <li>Mulai dari base (tanpa prefix) untuk HP</li>
-                <li>Atur perubahan besar di <code>md</code> (tablet) atau <code>lg</code> (desktop)</li>
-                <li>Jangan kebanyakan breakpoint kalau tidak perlu</li>
+                <li>Taruh keyword penting di depan</li>
+                <li>Jangan terlalu panjang (hindari kepotong)</li>
+                <li>Jangan semua halaman pakai judul yang sama</li>
               </ul>
 
-              <h2>2. Pola Aman Grid: container → row → col</h2>
+              <h2>2. Meta Description: Biar CTR Naik</h2>
               <p>
-                Kesalahan paling sering: <code>.row</code> langsung ditempel tanpa <code>.container</code>,
-                atau pakai <code>.col</code> tapi isi di dalamnya punya lebar fixed yang bikin overflow.
+                Meta description itu “iklan mini” di Google. Walau bukan faktor ranking langsung,
+                description yang bagus bikin orang lebih tertarik klik.
               </p>
 
-              <h3>Checklist grid yang aman</h3>
-              <ul>
-                <li><code>.container</code> atau <code>.container-fluid</code> membungkus section</li>
-                <li><code>.row</code> untuk baris (row punya gutter negatif, jadi butuh container)</li>
-                <li><code>.col-*</code> untuk kolom (jangan taruh padding aneh di row)</li>
-              </ul>
+              <h3>Contoh meta description</h3>
+              <pre class="code-block"><code>&lt;meta name="description" content="Portofolio Muhammad Affizar: proyek Bootstrap, UI rapi, SEO-friendly, dan responsif. Lihat studi kasus dan kontak."&gt;</code></pre>
 
-              <figure>
-                <img loading="lazy"
-                     src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80"
-                     alt="Foto Unsplash: UI layout">
-                <figcaption><b>Gambar Pendukung (Unsplash):</b> Grid rapi = layout lebih stabil di berbagai device.</figcaption>
-              </figure>
-
-              <h2>3. Container vs Container-Fluid</h2>
+              <h2>3. Struktur Heading: 1 H1, Baru H2/H3</h2>
               <p>
-                <code>container</code> punya lebar maksimum per breakpoint. Cocok untuk konten seperti artikel, card, landing page.
-                <code>container-fluid</code> full width, cocok untuk hero lebar penuh atau background section.
+                Heading itu kerangka bacaan. Idealnya hanya ada <b>1 H1</b> (judul utama),
+                lalu pecah section besar pakai H2 dan detailnya pakai H3.
               </p>
 
-              <h3>Pola aman yang sering dipakai</h3>
-              <ul>
-                <li>Hero: <code>container-fluid</code> (background full)</li>
-                <li>Konten utama: <code>container</code> (biar enak dibaca)</li>
-                <li>Footer: bebas, tergantung desain</li>
-              </ul>
+              <h3>Contoh struktur heading</h3>
+              <pre class="code-block"><code>&lt;h1&gt;Portofolio Web Developer&lt;/h1&gt;
+&lt;h2&gt;Proyek Terbaru&lt;/h2&gt;
+&lt;h3&gt;Studi Kasus: Landing Page&lt;/h3&gt;
+&lt;h2&gt;Keahlian&lt;/h2&gt;</code></pre>
 
               <figure class="promo-gif">
-                <img loading="lazy" src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" alt="GIF promosi: responsive layout">
-                <figcaption><b>GIF Promosi:</b> Grid benar = layout nggak “ngegas” ke kanan.</figcaption>
+                <img loading="lazy" src="https://media.giphy.com/media/3o7TKxOh6aY2p8ZsFa/giphy.gif" alt="GIF promosi: SEO on-page checklist">
+                <figcaption><b>GIF Promosi:</b> Struktur rapi bikin user betah dan bot paham isi halaman.</figcaption>
               </figure>
 
-              <h2>4. Anti Layout Geser: img-fluid + ukuran fleksibel</h2>
+              <h2>4. Internal Link: Arahkan User + Bot</h2>
               <p>
-                Penyebab “geser” paling sering:
-                gambar tanpa <code>img-fluid</code>, elemen pakai <code>width: 1200px</code>,
-                atau komponen panjang (badge, table, code) tanpa pengaman.
+                Internal link membantu mesin pencari memahami hubungan antar halaman, sekaligus membantu user eksplor konten.
+                Di portofolio, ini penting untuk mengarahkan ke <b>proyek</b>, <b>artikel terkait</b>, dan <b>kontak</b>.
               </p>
 
-              <h3>Checklist anti-geser</h3>
+              <h3>Contoh internal link yang bagus</h3>
+              <pre class="code-block"><code>&lt;a href="artikel-seo-technical.html"&gt;Baca juga: SEO Technical Dasar&lt;/a&gt;</code></pre>
+
+              <h3>Aturan sederhana</h3>
               <ul>
-                <li>Gambar pakai <code>class="img-fluid"</code> atau CSS <code>max-width:100%</code></li>
-                <li>Hindari lebar fixed besar (px) di mobile</li>
-                <li>Gunakan wrapping: <code>text-wrap</code>, <code>flex-wrap</code>, atau <code>overflow-auto</code> bila perlu</li>
+                <li>Pakai anchor text yang jelas (jangan “klik di sini”)</li>
+                <li>Link ke halaman relevan (bukan asal banyak)</li>
+                <li>Pastikan tidak ada link rusak (404)</li>
               </ul>
 
-              <h2>5. Debug Cepat: cari elemen “terlebar”</h2>
+              <h2>5. Gambar: Alt Text + Nama File</h2>
               <p>
-                Kalau tiba-tiba ada scroll horizontal:
-                buka DevTools → Inspect → cek elemen mana yang melebar.
-                Biasanya ketemu “pelakunya” dalam 1–2 menit.
+                Alt text membantu aksesibilitas dan memberi konteks mesin pencari. Buat deskriptif, singkat, dan relevan.
+                Jangan keyword stuffing.
               </p>
+
+              <h3>Contoh alt yang aman</h3>
+              <pre class="code-block"><code>&lt;img src="img/proyek-landing-page.webp" alt="Tampilan landing page Bootstrap untuk bisnis kuliner" loading="lazy"&gt;</code></pre>
+
+              <h2>6. Schema: Bonus Sinyal (FAQ / Artikel)</h2>
+              <p>
+                Schema (JSON-LD) membantu mesin pencari memahami tipe konten. Untuk artikel portofolio,
+                yang paling gampang dipakai adalah <b>BlogPosting</b> dan <b>FAQPage</b>.
+              </p>
+
+              <h3>Checklist schema</h3>
+              <ul>
+                <li>Judul + deskripsi sesuai konten</li>
+                <li>Author konsisten</li>
+                <li>Tanggal publish/modifikasi benar</li>
+              </ul>
+
+              <h2>7. Checklist SEO On-Page Cepat</h2>
+              <ul>
+                <li><b>Title unik</b> per halaman</li>
+                <li><b>Description</b> jelas & menarik</li>
+                <li><b>1 H1</b> + H2/H3 rapi</li>
+                <li><b>Internal link</b> relevan</li>
+                <li><b>Alt image</b> deskriptif</li>
+                <li><b>Open Graph</b> untuk share sosial</li>
+                <li><b>Schema</b> (Artikel + FAQ) jika cocok</li>
+              </ul>
 
               <h2>Baca Juga</h2>
               <ul>
-                <li><a href="artikel-ui-consistency-spacing-komponen.html" target="_blank" rel="noopener">UI Consistency: Skala Spacing & Komponen Biar Konsisten</a></li>
-                <li><a href="artikel-seo-technical-sitemap-robots-performance.html" target="_blank" rel="noopener">SEO Technical Dasar: Sitemap, Robots, dan Performance</a></li>
+                <li><a href="artikel-seo-technical.html" target="_blank" rel="noopener">SEO Technical Dasar: Sitemap, Robots, dan Performance</a></li>
+                <li><a href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Landing Page Bootstrap Rapi & Anti “Geser”</a></li>
               </ul>
+
+              <figure class="promo-gif">
+                <img loading="lazy" src="https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif" alt="GIF promosi: improve CTR">
+                <figcaption><b>GIF Promosi:</b> Title + description yang rapi bikin CTR naik.</figcaption>
+              </figure>
 
               <h2>FAQ</h2>
               <div class="accordion" id="faqAcc">
                 <div class="accordion-item">
                   <h3 class="accordion-header" id="q1">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
-                      Apa bedanya container dan container-fluid di Bootstrap?
+                      Apa bedanya SEO on-page dan technical?
                     </button>
                   </h3>
                   <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
                     <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      container punya lebar maksimum per breakpoint, container-fluid selalu 100% lebar. Pakai container untuk layout aman, container-fluid untuk section full width.
+                      On-page fokus pada konten dan struktur di halaman (judul, deskripsi, heading, internal link, alt gambar, schema).
+                      Technical fokus pada crawl/indexing dan performa (sitemap, robots, Core Web Vitals, caching).
                     </div>
                   </div>
                 </div>
@@ -590,12 +659,13 @@
                 <div class="accordion-item">
                   <h3 class="accordion-header" id="q2">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
-                      Kenapa layout sering geser ke kanan di HP?
+                      Meta description pengaruh ranking?
                     </button>
                   </h3>
                   <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
                     <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      Biasanya karena elemen melebar: gambar tidak responsif, width fixed besar, row tanpa container, atau komponen panjang tanpa wrapping/overflow.
+                      Biasanya bukan faktor ranking langsung, tapi sangat mempengaruhi CTR (klik) di hasil pencarian.
+                      Description yang jelas dan menarik bikin orang lebih mau klik.
                     </div>
                   </div>
                 </div>
@@ -603,12 +673,13 @@
                 <div class="accordion-item">
                   <h3 class="accordion-header" id="q3">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
-                      Breakpoint yang paling sering dipakai untuk HP?
+                      Berapa heading yang ideal?
                     </button>
                   </h3>
                   <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
                     <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
-                      Mulai dari base (tanpa prefix) untuk HP, lalu biasanya naik ke sm dan md untuk tablet/desktop.
+                      Gunakan 1 H1 untuk judul utama. Pecah konten dengan H2 untuk bagian besar, dan H3 untuk subbagian.
+                      Yang penting strukturnya jelas dan nyaman dibaca.
                     </div>
                   </div>
                 </div>
@@ -616,8 +687,9 @@
 
               <h2>Kesimpulan</h2>
               <p>
-                Kunci responsive Bootstrap itu pola aman: <b>container → row → col</b>, pilih breakpoint seperlunya,
-                pastikan gambar dan komponen tidak memaksa lebar fixed, dan selalu cek overflow-x kalau layout “geser”.
+                SEO on-page itu pondasi paling cepat dirapikan: title & description yang kuat,
+                heading terstruktur, internal link relevan, alt image rapi, dan schema bila perlu.
+                Kalau ini konsisten, halaman portofolio kamu akan lebih “kebaca” dan lebih menarik diklik.
               </p>
             </div>
           </article>
@@ -632,33 +704,33 @@
             <div class="row g-3">
               <div class="col-md-4">
                 <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80" alt="Unsplash: UI design">
-                  <div class="rel-body">
-                    <div class="rel-title">UI Consistency: Skala Spacing & Komponen Biar Konsisten</div>
-                    <div class="rel-desc">Framework kecil untuk konsistensi UI: spacing scale, typographic scale, komponen reusable.</div>
-                    <a class="btn btn-rel w-100" href="artikel-ui-consistency-spacing-komponen.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Unsplash: SEO">
+                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=900&q=80" alt="Unsplash: SEO technical">
                   <div class="rel-body">
                     <div class="rel-title">SEO Technical Dasar: Sitemap, Robots, dan Performance</div>
-                    <div class="rel-desc">Langkah praktis: sitemap, robots.txt, kecepatan, dan audit ringan.</div>
-                    <a class="btn btn-rel w-100" href="artikel-seo-technical-sitemap-robots-performance.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                    <div class="rel-desc">Sitemap, robots.txt, canonical, indexing, dan Core Web Vitals untuk speed.</div>
+                    <a class="btn btn-rel w-100" href="artikel-seo-technical.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <div class="rel-card">
-                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Unsplash: teamwork">
+                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Unsplash: coding">
                   <div class="rel-body">
-                    <div class="rel-title">Multitasking Cepat Tanpa Berantakan</div>
-                    <div class="rel-desc">Prioritas, timebox, checklist, dan komunikasi agar progress tetap jelas.</div>
-                    <a class="btn btn-rel w-100" href="artikel-multitasking-cepat.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                    <div class="rel-title">Landing Page Bootstrap Rapi & Anti “Geser”</div>
+                    <div class="rel-desc">Checklist layout stabil: container, overflow-x, gambar responsif, grid benar.</div>
+                    <a class="btn btn-rel w-100" href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="rel-card">
+                  <img class="rel-thumb" loading="lazy" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80" alt="Unsplash: UI">
+                  <div class="rel-body">
+                    <div class="rel-title">UI Consistency: Skala Spacing & Komponen Biar Konsisten</div>
+                    <div class="rel-desc">Skala spacing, typography, komponen reusable, dan checklist implementasi.</div>
+                    <a class="btn btn-rel w-100" href="artikel-ui-consistency.html" target="_blank" rel="noopener">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
@@ -687,6 +759,7 @@
               <button class="btn btn-share" id="shareFB" type="button"><i class="bi bi-facebook me-1"></i> Facebook</button>
               <button class="btn btn-share" id="shareX" type="button"><i class="bi bi-twitter-x me-1"></i> X</button>
               <button class="btn btn-share" id="shareIN" type="button"><i class="bi bi-linkedin me-1"></i> LinkedIn</button>
+              <button class="btn btn-share" id="shareCopy" type="button"><i class="bi bi-link-45deg me-1"></i> Copy</button>
             </div>
 
             <div class="side-title"><i class="bi bi-person-badge me-2"></i>Profil Penulis</div>
@@ -749,9 +822,10 @@
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
 
-      // TOC H2/H3
+      // ===== TOC (Desktop + Mobile) =====
       var article = document.getElementById('articleContent');
-      var tocList = document.getElementById('tocList');
+      var tocList = document.getElementById('tocList');     // desktop
+      var tocListM = document.getElementById('tocListM');   // mobile
 
       function slugify(txt){
         return (txt || '')
@@ -761,43 +835,52 @@
           .replace(/\s+/g,'-')
           .replace(/-+/g,'-');
       }
+      function uniqueId(base){
+        var id = base || 'section';
+        var n = 2;
+        while (document.getElementById(id)) { id = base + '-' + n; n++; }
+        return id;
+      }
+      function appendItem(list, heading){
+        if (!list || !heading) return;
+        var text = (heading.textContent || '').trim();
+        if (!text) return;
 
+        if (!heading.id){
+          var base = slugify(text);
+          heading.id = uniqueId(base);
+        }
+
+        var li = document.createElement('li');
+        li.style.marginLeft = (heading.tagName.toLowerCase() === 'h3') ? '14px' : '0';
+
+        var a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = text;
+
+        li.appendChild(a);
+        list.appendChild(li);
+      }
       function buildTOC(){
-        if (!article || !tocList) return;
-        tocList.innerHTML = '';
+        if (!article) return;
+        if (tocList) tocList.innerHTML = '';
+        if (tocListM) tocListM.innerHTML = '';
 
         var heads = article.querySelectorAll('h2, h3');
         if (!heads.length){
-          tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocList) tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocListM) tocListM.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
           return;
         }
 
         heads.forEach(function(h){
-          var text = h.textContent.trim();
-          if (!text) return;
-
-          if (!h.id){
-            var base = slugify(text);
-            var id = base;
-            var n = 2;
-            while (document.getElementById(id)) { id = base + '-' + n; n++; }
-            h.id = id;
-          }
-
-          var li = document.createElement('li');
-          li.style.marginLeft = (h.tagName.toLowerCase() === 'h3') ? '14px' : '0';
-
-          var a = document.createElement('a');
-          a.href = '#' + h.id;
-          a.textContent = text;
-
-          li.appendChild(a);
-          tocList.appendChild(li);
+          appendItem(tocList, h);
+          appendItem(tocListM, h);
         });
       }
       buildTOC();
 
-      // Toggle TOC
+      // Toggle TOC Desktop
       var tocToggle = document.getElementById('tocToggle');
       var tocBody = document.getElementById('tocBody');
       var tocIcon = document.getElementById('tocIcon');
@@ -809,7 +892,19 @@
         });
       }
 
-      // Share
+      // Toggle TOC Mobile
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      // ===== Share =====
       var shareTitle = document.title;
       function getUrl(){ return window.location.href; }
       function enc(s){ return encodeURIComponent(s); }
@@ -825,12 +920,28 @@
       var btnFB = document.getElementById('shareFB');
       var btnX  = document.getElementById('shareX');
       var btnIN = document.getElementById('shareIN');
+      var btnCP = document.getElementById('shareCopy');
 
       if (btnWA) btnWA.addEventListener('click', function(){ openShare(waLink()); });
       if (btnFB) btnFB.addEventListener('click', function(){ openShare('https://www.facebook.com/sharer/sharer.php?u=' + enc(getUrl())); });
       if (btnX)  btnX.addEventListener('click', function(){ openShare('https://twitter.com/intent/tweet?text=' + enc(shareTitle) + '&url=' + enc(getUrl())); });
       if (btnIN) btnIN.addEventListener('click', function(){ openShare('https://www.linkedin.com/sharing/share-offsite/?url=' + enc(getUrl())); });
 
+      // Copy link
+      if (btnCP){
+        btnCP.addEventListener('click', async function(){
+          var url = getUrl();
+          try{
+            await navigator.clipboard.writeText(url);
+            btnCP.innerHTML = '<i class="bi bi-check2 me-1"></i> Copied';
+            setTimeout(function(){
+              btnCP.innerHTML = '<i class="bi bi-link-45deg me-1"></i> Copy';
+            }, 1200);
+          }catch(e){
+            window.prompt('Copy link ini:', url);
+          }
+        });
+      }
     })();
   </script>
 </body>

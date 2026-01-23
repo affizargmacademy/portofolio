@@ -10,6 +10,10 @@
   <meta name="keywords" content="Keahlian, Muhammad Affizar Ibrahim Alkautsar, Web Developer, Bootstrap, Frontend, UI Implementation, SEO, Public Speaking, Leadership, Jember">
   <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#5a0f1d">
+
+  <!-- Canonical (pakai relatif agar tidak salah domain) -->
+  <link rel="canonical" href="keahlian.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Keahlian — Portofolio Muhammad Affizar Ibrahim Alkautsar">
@@ -17,7 +21,21 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="id_ID">
   <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:url" content="keahlian.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Keahlian — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="twitter:description" content="Keahlian Web Developer: Bootstrap, UI Implementation, SEO dasar, komunikasi & leadership.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
   <!--akhir section 1: SEO + Meta-->
+
+  <!-- Maksimalkan favicon (sesuaikan path jika folder berbeda) -->
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <!-- Bootstrap + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -33,15 +51,26 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Muhammad Affizar Ibrahim Alkautsar",
-    "jobTitle": "Web Developer",
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "SMKN 3 Jember",
-      "department": "Rekayasa Perangkat Lunak"
-    },
-    "knowsAbout": ["Bootstrap", "Frontend", "UI Implementation", "SEO On-Page", "Public Speaking", "Leadership", "Multitasking"]
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Muhammad Affizar Ibrahim Alkautsar",
+        "jobTitle": "Web Developer",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "SMKN 3 Jember",
+          "department": "Rekayasa Perangkat Lunak"
+        },
+        "knowsAbout": ["Bootstrap", "Frontend", "UI Implementation", "SEO On-Page", "Public Speaking", "Leadership", "Multitasking"]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Keahlian — Portofolio Muhammad Affizar Ibrahim Alkautsar",
+        "description": "Keahlian Muhammad Affizar Ibrahim Alkautsar: Frontend & Bootstrap, UI Implementation, SEO dasar, komunikasi, leadership, public speaking, dan multitasking.",
+        "inLanguage": "id-ID",
+        "url": "keahlian.html"
+      }
+    ]
   }
   </script>
   <!--akhir section 2: JSON-LD-->
@@ -142,6 +171,7 @@
     .pill{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:10px;
       padding:.45rem .75rem;
       border-radius:999px;
@@ -365,11 +395,11 @@
     .footer a{ color: rgba(255,246,221,.82); }
     .footer a:hover{ color:#fff; }
 
-    /* Scroll-to-top */
+    /* Scroll-to-top (di atas WhatsApp) */
     .to-top{
       position: fixed;
       right: 16px;
-      bottom: 16px;
+      bottom: 72px; /* <-- agar stack: to-top di atas WA */
       width: 46px;
       height: 46px;
       border-radius: 999px;
@@ -388,12 +418,43 @@
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
     .to-top:hover{ box-shadow: var(--gold-glow); color:#fff; }
 
+    /* Floating WhatsApp (di bawah to-top) */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      z-index: 9998;
+      color: #fff;
+      background: linear-gradient(180deg, #25D366 0%, #1aa84f 100%);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 40px rgba(0,0,0,.22);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .wa-float:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 52px rgba(0,0,0,.26);
+      color:#fff;
+    }
+
     @media (max-width: 991.98px){
       .hero-inner{ padding-bottom: 36px; }
     }
     @media (max-width: 575.98px){
       .hero-wave{ height: 62px; }
       .page-title{ max-width: none; }
+      /* rapikan hero mobile: center, tidak nabrak */
+      .page-title,
+      .page-lead{
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .pill{ margin-left:auto; margin-right:auto; }
     }
   </style>
   <!--akhir section 3: CSS-->
@@ -425,7 +486,8 @@
       </nav>
 
       <div class="row align-items-center g-4 g-lg-5 pt-3">
-        <div class="col-lg-7">
+        <!-- tambahkan class responsive agar hero mobile rapi/center -->
+        <div class="col-lg-7 text-center text-lg-start">
           <span class="pill"><i class="bi bi-lightning-charge"></i> Fokus Skill</span>
           <h1 class="page-title">Keahlian yang Saya Kuasai</h1>
           <p class="page-lead">
@@ -635,7 +697,7 @@
         </div>
       </div>
 
-      <div class="mt-4 cta-strip d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+      <div class="mt-4 cta-strip d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3" id="contact">
         <div>
           <div class="fw-extrabold" style="font-weight:800;color:#241012;">Butuh website yang rapi & elegan?</div>
           <div style="color:#6c5a5c;font-size:13px;line-height:1.6;">
@@ -719,9 +781,21 @@
   </footer>
   <!--akhir section 8: FOOTER-->
 
-  <!-- Floating Scroll To Top -->
+  <!-- Floating Scroll To Top (di atas) -->
   <a class="to-top" id="toTop" href="#top" aria-label="Kembali ke atas">
     <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Floating WhatsApp (di bawah to-top) -->
+  <a
+    class="wa-float"
+    href="https://wa.me/6280000000000?text=Halo%20Affizar%2C%20saya%20ingin%20konsultasi%20tentang%20website."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp"
+    title="Chat WhatsApp"
+  >
+    <i class="bi bi-whatsapp fs-4"></i>
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

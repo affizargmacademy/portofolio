@@ -10,6 +10,10 @@
   <meta name="keywords" content="Artikel, Blog, Muhammad Affizar Ibrahim Alkautsar, Web Developer, Bootstrap, UI, SEO, Leadership, Public Speaking">
   <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#5a0f1d">
+
+  <!-- Canonical (relative) -->
+  <link rel="canonical" href="artikel.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Artikel — Portofolio Muhammad Affizar Ibrahim Alkautsar">
@@ -17,6 +21,19 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="id_ID">
   <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:site_name" content="Portofolio Muhammad Affizar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artikel — Portofolio Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="twitter:description" content="Catatan dan tulisan tentang web development, UI, SEO, produktivitas, dan leadership.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+
+  <!-- Favicon (maksimal) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
   <!--akhir section 1: SEO + Meta-->
 
   <!-- Bootstrap + Icons -->
@@ -37,9 +54,25 @@
     "name": "Artikel Muhammad Affizar Ibrahim Alkautsar",
     "description": "Artikel seputar web development, UI, SEO dasar, produktivitas, dan leadership.",
     "inLanguage": "id-ID",
+    "url": "artikel.html",
     "author": {
       "@type": "Person",
       "name": "Muhammad Affizar Ibrahim Alkautsar"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portofolio Muhammad Affizar Ibrahim Alkautsar",
+    "inLanguage": "id-ID",
+    "url": "index.html",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "artikel.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   }
   </script>
@@ -358,7 +391,7 @@
     .to-top{
       position: fixed;
       right: 16px;
-      bottom: 16px;
+      bottom: 78px; /* biar WA di bawah */
       width: 46px;
       height: 46px;
       border-radius: 999px;
@@ -377,8 +410,50 @@
     .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
     .to-top:hover{ box-shadow: var(--gold-glow); color:#fff; }
 
+    /* WA melayang (di bawah to-top) */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      z-index: 9999;
+    }
+    .wa-float i{ font-size: 22px; color:#052a12; }
+
     @media (max-width: 991.98px){ .side-box{ position: static; } }
-    @media (max-width: 575.98px){ .hero-wave{ height: 62px; } }
+
+    /* ===== FIX: HERO TEXT MOBILE (yang tadi kelewat) ===== */
+    @media (max-width: 575.98px){
+      .hero-inner{ padding: 18px 0 44px; }
+      .hero-wave{ height: 62px; }
+
+      /* fokus: tulisan hero (kolom kiri) di-center */
+      .hero-inner .row.align-items-center > .col-lg-7{
+        text-align: center;
+      }
+      .hero-inner .row.align-items-center > .col-lg-7 .pill{
+        justify-content: center;
+      }
+      .hero-inner .row.align-items-center > .col-lg-7 .page-title{
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-inner .row.align-items-center > .col-lg-7 .page-lead{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* biar box kanan gak terlalu mepet */
+      .hero-side{ margin-top: 6px; }
+    }
   </style>
   <!--akhir section 3: CSS-->
 </head>
@@ -765,6 +840,11 @@
     <i class="bi bi-arrow-up"></i>
   </a>
 
+  <!-- WA melayang (di bawah floating top) -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <!--awal section 8: JS-->
@@ -783,6 +863,16 @@
       }
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // WA melayang (link dinamis: judul + url halaman)
+      var waFloat = document.getElementById('waFloat');
+      function enc(s){ return encodeURIComponent(s); }
+      function waLink(){
+        var title = document.title || 'Artikel';
+        var url = window.location.href;
+        return 'https://wa.me/?text=' + enc(title + ' - ' + url);
+      }
+      if (waFloat) waFloat.href = waLink();
 
       // anti horizontal scroll
       function clampOverflow() {

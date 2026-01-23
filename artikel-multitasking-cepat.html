@@ -355,6 +355,8 @@
       position:relative;
       overflow:hidden;
     }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
 
     /* Floating buttons */
     .wa-float{
@@ -398,6 +400,45 @@
     @media (max-width: 991.98px){
       .side-box{ position: static; }
     }
+
+    /* ====== PERBAIKAN HERO MOBILE (RAPI + CENTER) ====== */
+    @media (max-width: 575.98px){
+      .brand{ font-size:18px; }
+      .hero-wrap .navbar{ padding-top:.25rem !important; padding-bottom:.25rem !important; }
+      .hero-wrap .navbar-toggler{ padding:.25rem .45rem; }
+
+      /* ruang aman sebelum wave supaya nggak numpuk */
+      .hero-inner{ padding: 14px 0 92px; }
+      .hero-wrap .row.pt-3{ padding-top: .4rem !important; }
+
+      /* center semua teks hero di mobile */
+      .hero-wrap .col-lg-8{ text-align:center; }
+      .hero-wrap .pill{ justify-content:center; }
+
+      /* meta-row pada hero biar center */
+      .hero-wrap .mt-3.meta-row{ justify-content:center; }
+
+      .hero-wrap .page-title,
+      .hero-wrap .page-lead{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .pill{ font-size:11px; padding:.42rem .68rem; }
+      .page-title{
+        font-size: 28px;
+        line-height: 1.12;
+        letter-spacing: -0.4px;
+        margin: 10px 0 8px;
+        max-width: 26ch;
+      }
+      .page-lead{
+        font-size: 13px;
+        line-height: 1.75;
+        max-width: 48ch;
+      }
+      .hero-wave{ height: 64px; }
+    }
   </style>
 </head>
 
@@ -417,7 +458,7 @@
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#resources">Proyek</a></li>
+            <!-- Proyek DIHAPUS sesuai perintah -->
             <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom active" aria-current="page" href="artikel.html">Artikel</a></li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
@@ -474,6 +515,20 @@
                    alt="Foto Unsplash: tim kolaborasi untuk produktivitas">
               <figcaption><b>Gambar Utama (Unsplash):</b> Multitasking yang rapi biasanya butuh sistem + komunikasi singkat.</figcaption>
             </figure>
+
+            <!-- TOC MOBILE: di bawah gambar utama -->
+            <div class="mx-3 mt-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
 
             <div class="article-content" id="articleContent">
               <p>
@@ -747,9 +802,10 @@
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
 
-      // TOC H2/H3
+      // TOC H2/H3 (DESKTOP + MOBILE)
       var article = document.getElementById('articleContent');
       var tocList = document.getElementById('tocList');
+      var tocListM = document.getElementById('tocListM');
 
       function slugify(txt){
         return (txt || '')
@@ -761,16 +817,21 @@
       }
 
       function buildTOC(){
-        if (!article || !tocList) return;
-        tocList.innerHTML = '';
+        if (!article) return;
+
+        if (tocList) tocList.innerHTML = '';
+        if (tocListM) tocListM.innerHTML = '';
 
         var heads = article.querySelectorAll('h2, h3');
         if (!heads.length){
-          tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocList) tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocListM) tocListM.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
           return;
         }
 
-        heads.forEach(function(h){
+        function addItem(targetList, h){
+          if (!targetList) return;
+
           var text = h.textContent.trim();
           if (!text) return;
 
@@ -790,12 +851,17 @@
           a.textContent = text;
 
           li.appendChild(a);
-          tocList.appendChild(li);
+          targetList.appendChild(li);
+        }
+
+        heads.forEach(function(h){
+          addItem(tocList, h);
+          addItem(tocListM, h);
         });
       }
       buildTOC();
 
-      // Toggle TOC
+      // Toggle TOC (Desktop)
       var tocToggle = document.getElementById('tocToggle');
       var tocBody = document.getElementById('tocBody');
       var tocIcon = document.getElementById('tocIcon');
@@ -804,6 +870,18 @@
           var isOpen = tocBody.classList.toggle('show');
           tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           if (tocIcon) tocIcon.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      // Toggle TOC (Mobile)
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
         });
       }
 

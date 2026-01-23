@@ -13,12 +13,19 @@
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
+  <!-- Theme Color (mobile address bar) -->
+  <meta name="theme-color" content="#5a0f1d">
+
+  <!-- Canonical (hindari duplikasi URL) -->
+  <link rel="canonical" href="about.html">
+
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Tentang — Portofolio Muhammad Affizar Ibrahim Alkautsar">
   <meta property="og:description" content="Fresh graduate SMKN 3 Jember (RPL). Web Developer + leadership, public speaking, sosial, multitasking.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="id_ID">
   <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:site_name" content="Portofolio Muhammad Affizar">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tentang — Portofolio Muhammad Affizar Ibrahim Alkautsar">
@@ -28,6 +35,12 @@
   <!-- Favicon (SVG data-uri) -->
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="14" fill="%235a0f1d"/%3E%3Cpath d="M18 26h28v4H18zM18 34h22v4H18z" fill="%23fff6dd"/%3E%3Ccircle cx="46" cy="36" r="3" fill="%23d4af37"/%3E%3C/svg%3E'>
   <link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"%3E%3Crect width="180" height="180" rx="40" fill="%235a0f1d"/%3E%3Cpath d="M50 72h80v12H50zM50 96h62v12H50z" fill="%23fff6dd"/%3E%3Ccircle cx="130" cy="110" r="10" fill="%23d4af37"/%3E%3C/svg%3E'>
+
+  <!-- Favicon (maksimal kompatibilitas) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
   <!--akhir section 1: SEO + Meta-->
 
   <!-- Bootstrap + Icons -->
@@ -54,6 +67,17 @@
     },
     "knowsAbout": ["Web Development", "Bootstrap", "Frontend", "UI Implementation", "Public Speaking", "Leadership", "Multitasking"],
     "description": "Fresh graduate SMKN 3 Jember jurusan RPL. Mahir web development, leadership (Ketua OSIS 2 periode), Ketua Umum Forum OSIS SMK se-Kabupaten Jember, Ketua Umum ekstrakurikuler supporter Skaga Wonderfull, public speaking kuat, sosial hebat, multitasking cepat."
+  }
+  </script>
+
+  <!-- Tambahan schema Website (AI Overview + entity clarity) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portofolio Muhammad Affizar Ibrahim Alkautsar",
+    "inLanguage": "id-ID",
+    "url": "index.html"
   }
   </script>
   <!--akhir section 2: JSON-LD-->
@@ -344,7 +368,7 @@
     .to-top{
       position: fixed;
       right: 16px;
-      bottom: 16px;
+      bottom: 78px; /* naik karena WA ada di bawah */
       width: 46px;
       height: 46px;
       border-radius: 999px;
@@ -371,9 +395,27 @@
       pointer-events:auto;
     }
 
+    /* WA floating (di bawah toTop) */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      z-index: 9999;
+    }
+    .wa-float i{ font-size: 22px; color:#052a12; }
+
     @media (max-width: 575.98px){
       .content-wrap{ padding-top: 52px; }
     }
+
     /* ===== FIX PROPORSI ABOUT HERO ===== */
 .hero-inner{
   padding: 20px 0 46px; /* sebelumnya terlalu tinggi */
@@ -471,6 +513,13 @@
 @media (max-width: 575.98px){
   .page-title{ max-width: none; }
   .hero-wave{ height: 62px; }
+
+  /* HERO text mobile biar rapi (seperti halaman artikel) */
+  .hero-inner .col-lg-7{ text-align:center; }
+  .hero-inner .col-lg-7 .pill{ justify-content:center; }
+  .hero-inner .col-lg-7 .page-title{ margin-left:auto; margin-right:auto; }
+  .hero-inner .col-lg-7 .page-lead{ margin-left:auto; margin-right:auto; }
+  .hero-inner .col-lg-7 .mt-3{ justify-content:center; }
 }
 
   </style>
@@ -750,6 +799,11 @@
     <i class="bi bi-arrow-up"></i>
   </a>
 
+  <!-- WA melayang (di bawah toTop) -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <!--awal section 10: JS-->
@@ -788,6 +842,16 @@
       }
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // WA floating (link otomatis)
+      function getUrl(){ return window.location.href; }
+      function enc(s){ return encodeURIComponent(s); }
+      function waLink(){
+        var title = document.title || 'Portofolio';
+        return 'https://wa.me/?text=' + enc(title + ' - ' + getUrl());
+      }
+      var waFloat = document.getElementById('waFloat');
+      if (waFloat) waFloat.href = waLink();
 
       // anti horizontal scroll
       function clampOverflow() {

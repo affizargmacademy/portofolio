@@ -13,21 +13,34 @@
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
+  <!-- Theme Color (mobile address bar) -->
+  <meta name="theme-color" content="#5a0f1d">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="index.html">
+
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Portofolio Muhammad Affizar Ibrahim Alkautsar — Web Developer">
   <meta property="og:description" content="Fresh graduate SMKN 3 Jember (RPL). Web Developer + leadership (Ketua OSIS 2 periode), public speaking, sosial, multitasking.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="id_ID">
   <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:site_name" content="Portofolio Muhammad Affizar">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Portofolio Muhammad Affizar Ibrahim Alkautsar — Web Developer">
   <meta name="twitter:description" content="Fresh graduate SMKN 3 Jember (RPL). Web Developer + leadership, public speaking, sosial, multitasking.">
   <meta name="twitter:image" content="assets/og-image.jpg">
 
-  <!-- Favicon -->
+  <!-- Favicon (data-uri tetap dipertahankan) -->
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="14" fill="%235a0f1d"/%3E%3Cpath d="M18 26h28v4H18zM18 34h22v4H18z" fill="%23fff6dd"/%3E%3Ccircle cx="46" cy="36" r="3" fill="%23d4af37"/%3E%3C/svg%3E'>
   <link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"%3E%3Crect width="180" height="180" rx="40" fill="%235a0f1d"/%3E%3Cpath d="M50 72h80v12H50zM50 96h62v12H50z" fill="%23fff6dd"/%3E%3Ccircle cx="130" cy="110" r="10" fill="%23d4af37"/%3E%3C/svg%3E'>
+
+  <!-- Favicon (maksimal kompatibilitas) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
   <!--akhir section 1: SEO + Meta-->
 
   <!-- Bootstrap + Icons -->
@@ -41,17 +54,14 @@
 
   <!-- JSON-LD -->
   <!--awal section 2: JSON-LD-->
+  <!-- NOTE: ganti "example.com" menjadi URL asli kalau sudah hosting -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Portofolio Muhammad Affizar Ibrahim Alkautsar",
-    "url": "https://example.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://example.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": "id-ID",
+    "url": "index.html"
   }
   </script>
 
@@ -492,7 +502,7 @@
 
     .mini-stat{
       position:absolute;
-      right: -6px;
+      right: 12px; /* JANGAN negatif */
       top: 18%;
       background:#fff;
       border: 1px solid rgba(90,15,29,.10);
@@ -500,11 +510,12 @@
       padding: 10px 12px;
       box-shadow: var(--soft-shadow);
       min-width: 140px;
+      max-width: 46vw; /* aman di layar kecil */
     }
     .mini-stat .n{ font-weight:800; color:#241012; line-height:1.1; }
     .mini-stat .t{ font-size: 11px; color:#6c5a5c; margin-top: 2px; }
     .mini-stat.second{
-      right: -10px;
+      right: 12px; /* JANGAN negatif */
       top: 56%;
       min-width: 150px;
     }
@@ -617,7 +628,7 @@
     .to-top{
       position: fixed;
       right: 16px;
-      bottom: 16px;
+      bottom: 78px; /* naik karena WA ada di bawah */
       width: 46px;
       height: 46px;
       border-radius: 999px;
@@ -645,14 +656,30 @@
       pointer-events:auto;
     }
 
+    /* WA floating (di bawah toTop) */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      z-index: 9999;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .wa-float i{ font-size: 22px; color:#052a12; }
+
     @media (max-width: 991.98px){
       :root{ --top-offset: 92px; }
       .hero-inner{ padding-bottom: 84px; }
       .stats{ max-width: 100%; }
       .hero-figure{ min-height: 330px; margin-top: 14px; }
       .hero-figure .ring{ width: 300px; height: 300px; }
-      .mini-stat{ right: 0; }
-      .mini-stat.second{ right: 0; }
     }
     @media (max-width: 575.98px){
       :root{ --top-offset: 92px; }
@@ -661,34 +688,11 @@
       .hero-figure .spark{ left: 0; top: 96px; transform: scale(.9) rotate(8deg); }
       .hero-figure .dot{ right: 26px; top: 124px; }
       .content-wrap{ padding-top: 58px; }
-      .mini-stat{ top: 14%; }
+      .mini-stat{ top: 12%; padding: 8px 10px; min-width: auto; }
       .mini-stat.second{ top: 62%; }
     }
-    /* FULL BLEED di mobile */
-    .mini-stat{
-  right: 12px;            /* JANGAN negatif */
-  max-width: 46vw;        /* aman di layar kecil */
-}
 
-.mini-stat.second{
-  right: 12px;            /* JANGAN negatif */
-}
-@media (max-width: 575.98px){
-  .mini-stat{
-    top: 12%;
-    padding: 8px 10px;
-    min-width: auto;
-  }
-  .mini-stat.second{
-    top: 62%;
-  }
-}
-html, body{
-  width: 100%;
-  overflow-x: hidden;
-}
-
-
+    html, body{ width: 100%; overflow-x: hidden; }
   </style>
   <!--akhir section 3: CSS-->
 </head>
@@ -719,8 +723,8 @@ html, body{
       </nav>
 
       <div class="row align-items-center g-4 g-lg-5 pt-3">
-        <div class="col-lg-6">
-          <div class="rating">
+        <div class="col-lg-6 text-center text-lg-start">      
+          <div class="rating justify-content-center justify-content-lg-start">
             <span class="stars" aria-label="highlight">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </span>
@@ -729,13 +733,13 @@ html, body{
 
           <h1 class="hero-title">Muhammad Affizar<br>Ibrahim Alkautsar<br>Portofolio ✨</h1>
 
-          <p class="hero-lead">
+          <p class="hero-lead mx-auto mx-lg-0">
             Fresh graduate <b>SMKN 3 Jember</b> jurusan <b>Rekayasa Perangkat Lunak</b>.
             Cukup mahir di bidang <b>software web developer</b>, dengan kemampuan <b>public speaking</b> yang kuat,
             <b>skill bersosial</b> yang hebat, dan <b>multitasking</b> yang cepat.
           </p>
 
-          <div class="cta-row">
+          <div class="cta-row justify-content-center justify-content-lg-start">
             <a class="btn btn-pill btn-store" href="#contact" role="button" aria-label="Hubungi saya">
               <i class="bi bi-envelope-paper fs-5"></i>
               <span class="text-start lh-1">
@@ -785,6 +789,54 @@ html, body{
           d="M0,64 C240,124 360,4 720,64 C1080,124 1200,4 1440,64 L1440,140 L0,140 Z"></path>
       </svg>
     </div>
+    <style>
+      /* === MOBILE CENTER FIX (hero) === */
+@media (max-width: 575.98px){
+  .rating{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-title{
+    max-width: none;               /* hilangkan batas 22ch saat mobile */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: clamp(28px, 8.6vw, 40px);
+  }
+
+  .hero-lead{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 46ch;               /* biar rapi, gak kepanjangan */
+  }
+
+  .cta-row{
+    justify-content: center;
+  }
+
+  .stats{
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .stat{
+    min-width: 46%;
+    flex: 1 1 46%;
+  }
+}
+
+/* layar super kecil: stats jadi 1 kolom biar gak mepet */
+@media (max-width: 380px){
+  .stat{
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+    </style>
   </header>
 
   <main class="content-wrap">
@@ -863,7 +915,6 @@ html, body{
             </div>
           </div>
 
-          <!-- FIX: dibungkus kolom biar grid valid -->
           <div class="col-lg-4 order-1 order-lg-2">
             <a class="circle-shot circle-link" href="https://latarijo.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Buka proyek di tab baru">
               <div class="mini-stat">
@@ -1202,6 +1253,11 @@ html, body{
     <i class="bi bi-arrow-up"></i>
   </a>
 
+  <!-- WA melayang (di bawah toTop) -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <!--awal section 12: JS-->
@@ -1242,6 +1298,16 @@ html, body{
       }
       toggleToTop();
       window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      // WA floating (link otomatis: judul + URL)
+      function enc(s){ return encodeURIComponent(s); }
+      function waLink(){
+        var title = document.title || 'Portofolio';
+        var url = window.location.href;
+        return 'https://wa.me/?text=' + enc(title + ' - ' + url);
+      }
+      var waFloat = document.getElementById('waFloat');
+      if (waFloat) waFloat.href = waLink();
 
       // simple forms (no backend)
       var leadForm = document.getElementById('leadForm');
