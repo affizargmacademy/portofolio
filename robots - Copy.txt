@@ -1,0 +1,18 @@
+# robots.txt for Muhammad Affizar Ibrahim Alkautsar Portfolio
+# https://affizar.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://affizar.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Block specific bots if needed
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

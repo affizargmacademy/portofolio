@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- A letter -->
+  <path d="M100 20L40 180H65L75 150H125L135 150H160L100 20Z" fill="#5a0f1d" stroke="#d4af37" stroke-width="3"/>
+  <path d="M80 130L100 60L120 130H80Z" fill="none" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- F cross strokes integrated into A -->
+  <line x1="72" y1="110" x2="128" y2="110" stroke="#d4af37" stroke-width="4" stroke-linecap="round"/>
+  <line x1="78" y1="90" x2="120" y2="90" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Small accent dot -->
+  <circle cx="145" cy="60" r="6" fill="#d4af37"/>
+</svg>

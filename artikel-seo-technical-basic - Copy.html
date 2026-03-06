@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <!-- SEO + Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SEO Technical Dasar: Sitemap, Robots, dan Performance — Muhammad Affizar</title>
+  <meta name="description" content="Langkah praktis SEO technical untuk portofolio: sitemap.xml, robots.txt, canonical, indexing, Core Web Vitals, optimasi gambar, caching, dan checklist cepat biar website cepat & mudah diindeks.">
+  <meta name="keywords" content="SEO technical, sitemap.xml, robots.txt, canonical, indexing, core web vitals, performance web, optimasi gambar, portofolio seo">
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SEO Technical Dasar: Sitemap, Robots, dan Performance — Muhammad Affizar">
+  <meta property="og:description" content="Sitemap, robots.txt, canonical, indexing, dan optimasi performance (Core Web Vitals) biar website cepat dan mudah diindeks.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (Artikel) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"SEO Technical Dasar: Sitemap, Robots, dan Performance",
+    "description":"Langkah praktis SEO technical untuk portofolio: sitemap.xml, robots.txt, canonical, indexing, Core Web Vitals, optimasi gambar, caching, dan checklist cepat biar website cepat & mudah diindeks.",
+    "inLanguage":"id-ID",
+    "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"},
+    "image":"https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80",
+    "datePublished":"2026-01-24",
+    "dateModified":"2026-01-24"
+  }
+  </script>
+
+  <!-- Structured Data (FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Apakah sitemap wajib untuk website kecil?",
+        "acceptedAnswer":{"@type":"Answer","text":"Tidak wajib, tapi sangat membantu crawler menemukan halaman lebih cepat, terutama jika website punya banyak halaman artikel. Sitemap itu “peta” yang mempermudah indexing."}
+      },
+      {
+        "@type":"Question",
+        "name":"Apa fungsi robots.txt?",
+        "acceptedAnswer":{"@type":"Answer","text":"robots.txt memberi arahan halaman/folder mana yang boleh atau tidak boleh di-crawl. Ini bukan sistem keamanan, tapi panduan untuk bot. Pastikan jangan tidak sengaja memblokir halaman penting."}
+      },
+      {
+        "@type":"Question",
+        "name":"Performance ngaruh ke SEO?",
+        "acceptedAnswer":{"@type":"Answer","text":"Iya. Website yang lambat menurunkan pengalaman pengguna dan bisa berdampak ke ranking. Fokus ke Core Web Vitals: LCP, INP, dan CLS, plus optimasi gambar dan caching."}
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS (nuansa sama) -->
+  <style>
+    :root{
+      --bg: #5a0f1d;
+      --bg-2:#3b0a13;
+      --text:#fff6dd;
+      --muted:#f0dfb0;
+      --line: rgba(255,246,221,.16);
+      --accent:#d4af37;
+      --accent-2:#ffd36a;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --soft-shadow: 0 14px 40px rgba(0,0,0,.08);
+      --gold-glow: 0 0 0 1px rgba(212,175,55,.25), 0 18px 44px rgba(212,175,55,.18);
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow-x:hidden;
+      background:#f6f0e4;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{ text-decoration:none; }
+    .container, header, main, section, footer{ overflow-x: clip; }
+    .no-x{ overflow-x:hidden !important; }
+
+    /* NAV / BRAND */
+    .brand{ font-weight:800; letter-spacing:.2px; color:var(--text); font-size:20px; white-space:nowrap; }
+    .nav-link-custom{ color:rgba(255,246,221,.75); font-weight:600; font-size:14px; padding:.35rem .7rem !important; }
+    .nav-link-custom:hover{ color:#fff; }
+    .btn-pill{
+      border-radius:999px; padding:.55rem 1.05rem; font-weight:700; font-size:14px;
+      border:1px solid transparent; box-shadow:0 10px 24px rgba(0,0,0,.22); white-space:nowrap;
+    }
+    .btn-contact{
+      background:linear-gradient(180deg,var(--accent) 0%,#bf9830 100%);
+      color:#2a1a00;
+      border:1px solid rgba(255,211,106,.35);
+      box-shadow:var(--gold-glow);
+    }
+    .btn-contact:hover{
+      background:linear-gradient(180deg,var(--accent-2) 0%,var(--accent) 100%);
+      color:#2a1a00;
+    }
+
+    /* HERO */
+    .hero-wrap{
+      position:relative;
+      background:
+        radial-gradient(1200px 420px at 65% 40%, rgba(255,246,221,.08), transparent 60%),
+        radial-gradient(900px 380px at 20% 10%, rgba(212,175,55,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color:var(--text);
+      border-bottom-left-radius:36px;
+      border-bottom-right-radius:36px;
+      box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+    .hero-wrap:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.9;
+      background-image:
+        radial-gradient(circle at 18% 32%, rgba(212,175,55,.95) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 54%, rgba(255,246,221,.70) 0 1px, transparent 2px),
+        radial-gradient(circle at 45% 26%, rgba(255,246,221,.50) 0 1px, transparent 2px),
+        radial-gradient(circle at 52% 44%, rgba(255,246,221,.28) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(212,175,55,.65) 0 1.5px, transparent 2.5px);
+      mix-blend-mode:screen;
+      z-index:0;
+    }
+    .hero-inner{ position:relative; z-index:1; padding:20px 0 48px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:.45rem .75rem;
+      border-radius:999px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,246,221,.14);
+      color:rgba(255,246,221,.92);
+      font-size:12px;
+      font-weight:800;
+      backdrop-filter:blur(8px);
+    }
+    .page-title{
+      font-size:clamp(28px,3.4vw,44px);
+      font-weight:800;
+      line-height:1.1;
+      letter-spacing:-0.6px;
+      margin:10px 0 10px;
+      max-width:52ch;
+    }
+    .page-lead{
+      color:rgba(255,246,221,.78);
+      font-size:14px;
+      line-height:1.7;
+      max-width:86ch;
+      margin:0;
+    }
+    .meta-row{ display:flex; gap:12px; flex-wrap:wrap; color:rgba(255,246,221,.78); font-size:12px; align-items:center; }
+    .meta-row i{ color: var(--accent-2); }
+
+    .hero-wave{ position:absolute; left:0; right:0; bottom:-1px; width:100%; height:78px; z-index:1; pointer-events:none; }
+    .hero-wave svg{ width:100%; height:100%; display:block; }
+
+    /* CONTENT */
+    .content-wrap{
+      background:#ffffff;
+      margin-top:-28px;
+      padding-top:62px;
+      border-top-left-radius:34px;
+      border-top-right-radius:34px;
+      box-shadow:0 -20px 60px rgba(0,0,0,.08);
+    }
+
+    /* ARTICLE */
+    .article-card{
+      border:1px solid rgba(90,15,29,.10);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:var(--soft-shadow);
+      overflow:hidden;
+    }
+    .article-body{ padding: 18px 18px 8px; }
+    .badge-soft{
+      background: rgba(212,175,55,.20);
+      border: 1px solid rgba(212,175,55,.55);
+      color:#4a3300;
+      font-weight:800;
+      font-size:11px;
+      border-radius:999px;
+      padding:.35rem .6rem;
+      white-space:nowrap;
+      height: fit-content;
+    }
+
+    figure{
+      margin: 14px 0;
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 16px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+    }
+    figure img{ width:100%; height:auto; display:block; }
+    figcaption{
+      padding: 10px 12px;
+      font-size: 12px;
+      color:#6c5a5c;
+      line-height:1.6;
+      background: rgba(246,240,228,.55);
+    }
+
+    .article-content{
+      padding: 0 18px 18px;
+      color:#241012;
+      font-size:14px;
+      line-height:1.9;
+    }
+    .article-content h2{
+      margin-top: 18px;
+      font-weight: 800;
+      letter-spacing:-.2px;
+      font-size: 20px;
+    }
+    .article-content h3{
+      margin-top: 12px;
+      font-weight: 800;
+      font-size: 16px;
+      color:#3b0a13;
+    }
+    .article-content code{
+      background: rgba(90,15,29,.06);
+      border: 1px solid rgba(90,15,29,.10);
+      padding: 0 .35rem;
+      border-radius: 8px;
+      font-weight: 700;
+      color:#3b0a13;
+    }
+    /* block code */
+    .code-block{
+      background: rgba(90,15,29,.04);
+      border: 1px solid rgba(90,15,29,.10);
+      border-radius: 14px;
+      padding: 12px 12px;
+      overflow:auto;
+      box-shadow: var(--soft-shadow);
+      margin: 12px 0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .code-block code{ background: transparent; border:0; padding:0; border-radius:0; font-weight:600; }
+
+    .callout-quote{
+      border-left: 4px solid rgba(212,175,55,.85);
+      background: rgba(90,15,29,.04);
+      padding: 14px 14px;
+      border-radius: 14px;
+      margin: 14px 0;
+    }
+    .callout-quote p{ margin:0; color:#241012; font-weight:600; }
+
+    .promo-gif{
+      border:1px solid rgba(212,175,55,.40);
+      box-shadow: var(--gold-glow);
+    }
+
+    /* SIDEBAR */
+    .side-box{
+      border:1px solid rgba(90,15,29,.10);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:var(--soft-shadow);
+      padding:16px;
+      position: sticky;
+      top: 16px;
+    }
+    .side-title{ font-weight:800; color:#241012; margin:0 0 10px; font-size:14px; }
+    .toc-wrap{
+      border:1px solid rgba(90,15,29,.10);
+      border-radius: 16px;
+      overflow:hidden;
+      background: rgba(246,240,228,.55);
+    }
+    .toc-head{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 12px 12px;
+      font-weight:800;
+      color:#241012;
+      cursor:pointer;
+      user-select:none;
+    }
+    .toc-body{ padding: 10px 12px 12px; display:none; }
+    .toc-body.show{ display:block; }
+    .toc-list{ margin:0; padding-left: 16px; }
+    .toc-list li{ margin:6px 0; font-size:13px; color:#2b1a1c; }
+    .toc-list a{ color:#2b1a1c; }
+    .toc-list a:hover{ color: var(--bg); text-decoration:underline; }
+
+    .share-row{ display:flex; flex-wrap:wrap; gap:8px; }
+    .btn-share{
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+      padding: .45rem .7rem;
+      border: 1px solid rgba(90,15,29,.14);
+      background: #fff;
+      color:#241012;
+    }
+
+    .author-card{
+      display:flex; gap:12px; align-items:flex-start;
+      border:1px solid rgba(90,15,29,.10);
+      border-radius: 16px;
+      padding: 12px;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+    }
+    .author-avatar{
+      width: 48px; height:48px;
+      border-radius: 16px;
+      display:grid;
+      place-items:center;
+      background: rgba(90,15,29,.06);
+      border: 1px solid rgba(212,175,55,.18);
+      color: var(--bg);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+    .author-name{ font-weight: 900; margin:0; color:#241012; font-size: 14px; }
+    .author-bio{ margin:4px 0 0; color:#6c5a5c; font-size: 12px; line-height:1.6; }
+
+    /* RELATED */
+    .rel-card{
+      border:1px solid rgba(90,15,29,.10);
+      border-radius: 18px;
+      background:#fff;
+      box-shadow: var(--soft-shadow);
+      overflow:hidden;
+      height:100%;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .rel-card:hover{ transform: translateY(-4px); box-shadow: 0 20px 52px rgba(0,0,0,.10); }
+    .rel-thumb{ width:100%; height:160px; object-fit:cover; display:block; }
+    .rel-body{ padding: 12px 12px 14px; }
+    .rel-title{ margin:0 0 6px; font-weight:900; color:#241012; font-size: 14px; line-height:1.4; }
+    .rel-desc{ margin:0 0 10px; color:#6c5a5c; font-size: 12px; line-height:1.6; }
+    .btn-rel{
+      border-radius: 999px;
+      padding: .45rem .8rem;
+      font-weight: 900;
+      font-size: 12px;
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+      color:#2a1a00;
+      border: 1px solid rgba(212,175,55,.55);
+    }
+
+    /* FOOTER */
+    .footer{
+      background: linear-gradient(180deg, #3b0a13 0%, #2a070e 100%);
+      color: rgba(255,246,221,.82);
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+      box-shadow: 0 -16px 50px rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .footer a{ color: rgba(255,246,221,.82); }
+    .footer a:hover{ color:#fff; }
+
+    /* Floating buttons */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(180deg, #25D366 0%, #1fa855 100%);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      z-index: 9999;
+    }
+    .wa-float i{ font-size: 22px; color:#052a12; }
+
+    .to-top{
+      position: fixed;
+      right: 16px;
+      bottom: 78px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.24);
+      border: 1px solid rgba(212,175,55,.25);
+      opacity:0;
+      transform: translateY(10px);
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 9999;
+    }
+    .to-top.show{ opacity:1; transform: translateY(0); pointer-events:auto; }
+
+    @media (max-width: 991.98px){ .side-box{ position: static; } }
+
+    /* Anchor offset biar TOC gak ketutup header */
+    #articleContent h2, #articleContent h3{ scroll-margin-top: 90px; }
+
+    /* ===== HERO MOBILE (APPLY RULES) =====
+       1) tambah padding bawah biar nggak ketiban wave
+       2) kecilin title/lead
+       3) center text + pill + meta-row
+    */
+    @media (max-width: 991.98px){
+      .hero-inner{ padding: 16px 0 96px; } /* aman dari wave (78px) */
+      .hero-wrap .col-lg-8{ text-align:center; }
+      .hero-wrap .pill{ justify-content:center; margin-left:auto; margin-right:auto; }
+      .hero-wrap .meta-row{ justify-content:center; }
+      .hero-wrap .page-title, .hero-wrap .page-lead{ margin-left:auto; margin-right:auto; }
+
+      .hero-wrap .page-title{ font-size: clamp(24px, 7vw, 34px); max-width: 28ch; }
+      .hero-wrap .page-lead{ font-size: 13px; line-height: 1.7; }
+    }
+    @media (max-width: 575.98px){ .hero-wave{ height: 64px; } }
+  </style>
+</head>
+
+<body class="no-x">
+  <!-- HERO + NAVBAR -->
+  <header class="hero-wrap" id="top">
+    <div class="container hero-inner">
+      <nav class="navbar navbar-expand-lg navbar-dark py-2">
+        <a class="navbar-brand brand" href="index.html" aria-label="Portofolio Affizar">Affizar</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="keahlian.html">Keahlian</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#resources">Proyek</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="organisasi.html">Organisasi</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom active" aria-current="page" href="artikel.html">Artikel</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-pill btn-contact" href="index.html#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5 pt-3">
+        <div class="col-lg-8">
+          <span class="pill"><i class="bi bi-gear-wide-connected"></i> SEO • 7 menit</span>
+          <h1 class="page-title">SEO Technical Dasar: Sitemap, Robots, dan Performance</h1>
+          <p class="page-lead">
+            SEO bukan cuma meta. Ada bagian “technical” yang bikin website kamu <b>mudah diindeks</b> dan <b>cepat</b>:
+            sitemap, robots.txt, canonical, dan optimasi performance.
+          </p>
+          <div class="mt-3 meta-row">
+            <span><i class="bi bi-calendar3"></i> 24 Jan 2026</span>
+            <span><i class="bi bi-person"></i> Muhammad Affizar</span>
+            <span><i class="bi bi-folder2-open"></i> SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <path fill="rgba(0,0,0,.10)" d="M0,72 C240,132 360,12 720,72 C1080,132 1200,12 1440,72 L1440,140 L0,140 Z"></path>
+        <path fill="#ffffff" d="M0,64 C240,124 360,4 720,64 C1080,124 1200,4 1440,64 L1440,140 L0,140 Z"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="content-wrap">
+    <section class="container pb-5">
+      <div class="row g-4">
+        <!-- ARTICLE -->
+        <div class="col-lg-8">
+          <article class="article-card">
+            <div class="article-body">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="badge-soft"><i class="bi bi-gear-wide-connected me-1"></i> SEO</span>
+                <span class="badge-soft"><i class="bi bi-clock me-1"></i> 7 menit baca</span>
+                <span class="badge-soft"><i class="bi bi-speedometer2 me-1"></i> Technical + Speed</span>
+              </div>
+            </div>
+
+            <!-- Gambar utama -->
+            <figure class="mx-3 mt-0">
+              <img loading="lazy"
+                   src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80"
+                   alt="Foto Unsplash: data dan kode untuk ilustrasi SEO technical">
+              <figcaption><b>Gambar Utama (Unsplash):</b> SEO technical fokus pada indexing dan performa halaman.</figcaption>
+            </figure>
+
+            <!-- TOC MOBILE (tetap di bawah gambar utama) -->
+            <div class="mx-3 mt-3 d-lg-none">
+              <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+              <div class="toc-wrap mb-3">
+                <div class="toc-head" id="tocToggleM" aria-controls="tocBodyM" aria-expanded="false">
+                  <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                  <i class="bi bi-chevron-down" id="tocIconM"></i>
+                </div>
+                <div class="toc-body" id="tocBodyM">
+                  <ol class="toc-list" id="tocListM"></ol>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-content" id="articleContent">
+              <!-- (isi artikel tetap sama persis seperti kamu kirim) -->
+              <p>
+                Kalau on-page itu soal konten dan struktur, SEO technical itu soal “mesin”:
+                apakah crawler mudah menemukan halaman, apakah halaman cepat, dan apakah tidak ada sinyal yang membingungkan.
+              </p>
+
+              <div class="callout-quote" role="note" aria-label="Kutipan">
+                <p>“Konten bagus tetap bisa kalah kalau web-nya lambat dan sulit diindeks.”</p>
+              </div>
+
+              <h2>1. Sitemap.xml: Peta Halaman untuk Crawler</h2>
+              <p>
+                Sitemap berisi daftar URL yang ingin kamu indeks. Untuk website portofolio yang punya banyak artikel,
+                sitemap membantu mesin pencari menemukan halaman baru lebih cepat.
+              </p>
+
+              <h3>Contoh sitemap sederhana</h3>
+              <pre class="code-block"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://domainkamu.com/&lt;/loc&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://domainkamu.com/artikel.html&lt;/loc&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;0.8&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</code></pre>
+
+              <h3>Minimal yang perlu kamu lakukan</h3>
+              <ul>
+                <li>Buat file <code>sitemap.xml</code> di root website</li>
+                <li>Isi URL penting (artikel, halaman utama, about, dll)</li>
+                <li>Submit ke Google Search Console (kalau sudah online)</li>
+              </ul>
+
+              <h2>2. Robots.txt: Arahan Crawl yang Benar</h2>
+              <p>
+                <code>robots.txt</code> itu “aturan main” untuk bot: mana yang boleh di-crawl, mana yang nggak.
+                Ini bukan keamanan—jadi jangan simpan data sensitif lalu berharap robots menutup akses.
+              </p>
+
+              <h3>Contoh robots.txt aman</h3>
+              <pre class="code-block"><code>User-agent: *
+Allow: /
+
+Sitemap: https://domainkamu.com/sitemap.xml</code></pre>
+
+              <h3>Kesalahan yang sering kejadian</h3>
+              <ul>
+                <li>Tanpa sadar memblokir seluruh website: <code>Disallow: /</code></li>
+                <li>Memblokir folder aset penting (CSS/JS) → tampilan bot jadi “rusak”</li>
+                <li>Lupa update robots ketika pindah struktur folder</li>
+              </ul>
+
+              <figure class="promo-gif">
+                <img loading="lazy" src="https://media.giphy.com/media/xT0GqFhyNd0Wmfo6sM/giphy.gif" alt="GIF promosi: indexing dan crawl">
+                <figcaption><b>GIF Promosi:</b> Robots dan sitemap yang benar bikin indexing lebih mulus.</figcaption>
+              </figure>
+
+              <h2>3. Canonical: Hindari Duplikasi URL</h2>
+              <p>
+                Kadang 1 halaman bisa diakses dari beberapa URL (mis. parameter, versi www/non-www).
+                Canonical memberitahu mesin pencari “URL utama yang dianggap resmi”.
+              </p>
+
+              <h3>Contoh canonical</h3>
+              <pre class="code-block"><code>&lt;link rel="canonical" href="https://domainkamu.com/artikel-seo-technical.html"&gt;</code></pre>
+
+              <h2>4. Performance: Core Web Vitals (LCP, INP, CLS)</h2>
+              <p>
+                Performance ngaruh ke UX dan bisa mempengaruhi SEO. Fokus ke 3 metrik utama:
+                <b>LCP</b> (loading konten besar), <b>INP</b> (respons interaksi), dan <b>CLS</b> (layout geser).
+              </p>
+
+              <h3>Quick wins yang paling sering efektif</h3>
+              <ul>
+                <li><b>Optimasi gambar:</b> kompres, ukuran tepat, gunakan <code>loading="lazy"</code></li>
+                <li><b>Hindari layout geser:</b> gambar/iframe kasih ukuran (width/height) atau wrapper stabil</li>
+                <li><b>Kurangi script berat:</b> minim plugin/library yang tidak perlu</li>
+                <li><b>Cache aset:</b> set caching di hosting (kalau sudah deploy)</li>
+              </ul>
+
+              <h3>Contoh gambar responsif (anti CLS)</h3>
+              <pre class="code-block"><code>&lt;img
+  src="img/cover.webp"
+  alt="Cover artikel"
+  width="1200"
+  height="630"
+  loading="lazy"
+  class="img-fluid rounded-4"&gt;</code></pre>
+
+              <h2>5. Checklist SEO Technical untuk Portofolio</h2>
+              <ul>
+                <li><b>Sitemap:</b> ada dan berisi URL penting</li>
+                <li><b>Robots:</b> tidak memblokir halaman penting + set sitemap</li>
+                <li><b>Canonical:</b> konsisten untuk URL utama</li>
+                <li><b>Images:</b> kompres + ukuran benar + lazy load</li>
+                <li><b>Layout:</b> minim CLS (anti “geser”)</li>
+                <li><b>Speed:</b> minim script berat, gunakan cache di hosting</li>
+              </ul>
+
+              <h2>Baca Juga</h2>
+              <ul>
+                <li><a href="artikel-seo-onpage-portofolio.html" target="_blank" rel="noopener">SEO On-Page untuk Portofolio (Meta + Schema)</a></li>
+                <li><a href="artikel-landing-page-bootstrap.html" target="_blank" rel="noopener">Landing Page Bootstrap Rapi & Anti “Geser”</a></li>
+              </ul>
+
+              <figure class="promo-gif">
+                <img loading="lazy" src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyA/giphy.gif" alt="GIF promosi: speed optimization">
+                <figcaption><b>GIF Promosi:</b> Website cepat = UX naik, bounce turun, dan lebih enak diindeks.</figcaption>
+              </figure>
+
+              <h2>FAQ</h2>
+              <div class="accordion" id="faqAcc">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+                      Apakah sitemap wajib untuk website kecil?
+                    </button>
+                  </h3>
+                  <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      Tidak wajib, tapi sangat membantu crawler menemukan halaman lebih cepat, terutama jika website punya banyak halaman artikel. Sitemap itu “peta” untuk indexing.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                      Apa fungsi robots.txt?
+                    </button>
+                  </h3>
+                  <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      robots.txt memberi arahan halaman/folder mana yang boleh atau tidak boleh di-crawl. Ini bukan sistem keamanan—jadi jangan simpan data sensitif lalu berharap aman.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="q3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                      Performance ngaruh ke SEO?
+                    </button>
+                  </h3>
+                  <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+                    <div class="accordion-body" style="font-size:13px;line-height:1.8;color:#2b1a1c;">
+                      Iya. Website yang lambat menurunkan pengalaman pengguna dan bisa berdampak ke ranking. Fokus ke Core Web Vitals (LCP, INP, CLS), optimasi gambar, dan caching.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2>Kesimpulan</h2>
+              <p>
+                SEO technical itu fondasi: sitemap + robots membantu indexing, canonical mencegah sinyal duplikat,
+                dan performance bikin user betah. Kalau fondasi ini beres, konten kamu punya peluang lebih besar naik.
+              </p>
+            </div>
+          </article>
+
+          <!-- (bagian artikel terkait & sidebar & footer & floating buttons & script tetap sama seperti kamu kirim) -->
+          <!-- ... -->
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-lg-4">
+          <aside class="side-box">
+            <div class="side-title"><i class="bi bi-list-ul me-2"></i>Daftar Isi</div>
+            <div class="toc-wrap mb-3">
+              <div class="toc-head" id="tocToggle" aria-controls="tocBody" aria-expanded="false">
+                <span><i class="bi bi-journal-text me-2"></i>TOC Otomatis (H2/H3)</span>
+                <i class="bi bi-chevron-down" id="tocIcon"></i>
+              </div>
+              <div class="toc-body" id="tocBody">
+                <ol class="toc-list" id="tocList"></ol>
+              </div>
+            </div>
+
+            <div class="side-title"><i class="bi bi-share me-2"></i>Share Artikel</div>
+            <div class="share-row mb-3">
+              <button class="btn btn-share" id="shareWA" type="button"><i class="bi bi-whatsapp me-1"></i> WhatsApp</button>
+              <button class="btn btn-share" id="shareFB" type="button"><i class="bi bi-facebook me-1"></i> Facebook</button>
+              <button class="btn btn-share" id="shareX" type="button"><i class="bi bi-twitter-x me-1"></i> X</button>
+              <button class="btn btn-share" id="shareIN" type="button"><i class="bi bi-linkedin me-1"></i> LinkedIn</button>
+              <button class="btn btn-share" id="shareCopy" type="button"><i class="bi bi-link-45deg me-1"></i> Copy</button>
+            </div>
+
+            <div class="side-title"><i class="bi bi-person-badge me-2"></i>Profil Penulis</div>
+            <div class="author-card">
+              <div class="author-avatar" aria-hidden="true">MA</div>
+              <div>
+                <p class="author-name">Muhammad Affizar</p>
+                <p class="author-bio">
+                  Web Developer (Bootstrap) • Leadership • Public Speaking • Sosial • Multitasking.
+                  Fokus UI rapi, responsif, dan SEO-friendly.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer pt-4 pb-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2" style="font-size:12px;color:rgba(255,246,221,.72);">
+        <div>© <span id="year"></span> Muhammad Affizar Ibrahim Alkautsar. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="index.html#top">Privasi</a>
+          <a href="index.html#top">Syarat</a>
+          <a href="index.html#top">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA melayang (KANAN BAWAH) -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Share ke WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Floating Up (DI ATAS WA) -->
+  <a class="to-top" id="toTop" href="#top" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    (function () {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      var toTop = document.getElementById('toTop');
+      function toggleToTop() {
+        if (!toTop) return;
+        if (window.scrollY > 380) toTop.classList.add('show');
+        else toTop.classList.remove('show');
+      }
+      toggleToTop();
+      window.addEventListener('scroll', toggleToTop, { passive: true });
+
+      var article = document.getElementById('articleContent');
+      var tocList = document.getElementById('tocList');
+      var tocListM = document.getElementById('tocListM');
+
+      function slugify(txt){
+        return (txt || '')
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g,'')
+          .replace(/\s+/g,'-')
+          .replace(/-+/g,'-');
+      }
+      function uniqueId(base){
+        var id = base || 'section';
+        var n = 2;
+        while (document.getElementById(id)) { id = base + '-' + n; n++; }
+        return id;
+      }
+      function appendItem(list, heading){
+        if (!list || !heading) return;
+        var text = (heading.textContent || '').trim();
+        if (!text) return;
+
+        if (!heading.id){
+          var base = slugify(text);
+          heading.id = uniqueId(base);
+        }
+
+        var li = document.createElement('li');
+        li.style.marginLeft = (heading.tagName.toLowerCase() === 'h3') ? '14px' : '0';
+
+        var a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = text;
+
+        li.appendChild(a);
+        list.appendChild(li);
+      }
+      function buildTOC(){
+        if (!article) return;
+        if (tocList) tocList.innerHTML = '';
+        if (tocListM) tocListM.innerHTML = '';
+
+        var heads = article.querySelectorAll('h2, h3');
+        if (!heads.length){
+          if (tocList) tocList.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          if (tocListM) tocListM.innerHTML = '<li style="color:#6c5a5c;">Tidak ada heading.</li>';
+          return;
+        }
+
+        heads.forEach(function(h){
+          appendItem(tocList, h);
+          appendItem(tocListM, h);
+        });
+      }
+      buildTOC();
+
+      var tocToggle = document.getElementById('tocToggle');
+      var tocBody = document.getElementById('tocBody');
+      var tocIcon = document.getElementById('tocIcon');
+      if (tocToggle && tocBody){
+        tocToggle.addEventListener('click', function(){
+          var isOpen = tocBody.classList.toggle('show');
+          tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIcon) tocIcon.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      var tocToggleM = document.getElementById('tocToggleM');
+      var tocBodyM = document.getElementById('tocBodyM');
+      var tocIconM = document.getElementById('tocIconM');
+      if (tocToggleM && tocBodyM){
+        tocToggleM.addEventListener('click', function(){
+          var isOpen = tocBodyM.classList.toggle('show');
+          tocToggleM.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (tocIconM) tocIconM.className = isOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+        });
+      }
+
+      var shareTitle = document.title;
+      function getUrl(){ return window.location.href; }
+      function enc(s){ return encodeURIComponent(s); }
+      function openShare(url){ window.open(url, '_blank', 'noopener,noreferrer'); }
+      function waLink(){ return 'https://wa.me/?text=' + enc(shareTitle + ' - ' + getUrl()); }
+
+      var waFloat = document.getElementById('waFloat');
+      if (waFloat) waFloat.href = waLink();
+
+      var btnWA = document.getElementById('shareWA');
+      var btnFB = document.getElementById('shareFB');
+      var btnX  = document.getElementById('shareX');
+      var btnIN = document.getElementById('shareIN');
+      var btnCP = document.getElementById('shareCopy');
+
+      if (btnWA) btnWA.addEventListener('click', function(){ openShare(waLink()); });
+      if (btnFB) btnFB.addEventListener('click', function(){ openShare('https://www.facebook.com/sharer/sharer.php?u=' + enc(getUrl())); });
+      if (btnX)  btnX.addEventListener('click', function(){ openShare('https://twitter.com/intent/tweet?text=' + enc(shareTitle) + '&url=' + enc(getUrl())); });
+      if (btnIN) btnIN.addEventListener('click', function(){ openShare('https://www.linkedin.com/sharing/share-offsite/?url=' + enc(getUrl())); });
+
+      if (btnCP){
+        btnCP.addEventListener('click', async function(){
+          var url = getUrl();
+          try{
+            await navigator.clipboard.writeText(url);
+            btnCP.innerHTML = '<i class="bi bi-check2 me-1"></i> Copied';
+            setTimeout(function(){
+              btnCP.innerHTML = '<i class="bi bi-link-45deg me-1"></i> Copy';
+            }, 1200);
+          }catch(e){
+            window.prompt('Copy link ini:', url);
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
